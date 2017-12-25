@@ -1,0 +1,22 @@
+include ../blocks.project/includes
+
+doctype html
+html(lang="ru")
+  include templates/head/head
+    block head
+      - var pageTitle = "Контакты";
+
+  +page
+
+    +header(false).__header
+
+
+    +b.content.__content
+
+      .grid
+        +breadcrumbs(["Лензабор", "Справочный центр", "Контакты"])._top
+
+      +section-contacts
+
+
+    +footer(false).__footer

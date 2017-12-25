@@ -1,0 +1,29 @@
+mixin section-contacts()
+  +b.section-contacts&attributes(attributes)
+    +e.heading-content
+      +b("h1").heading._line.__heading Контакты
+    +e.content
+      +e.form-container
+        +b("form")(action="#" method="post" autocomplete="off").form.__form
+          +e.col._50
+            +label("name", "Имя")._required-red
+            +b("input")(type="text" name="name" required).input._name#name.__input
+          +e.col._50
+            +label("email", "Email")._required-red
+            +b("input")(type="email" name="email" required).input._email#email.__input
+          +e.col._50
+            +label("phone", "Телефон")
+            +b("input")(type="text" name="phone" required).input._phone.mask._phone#phone.__input
+          +e.col._50
+            +label("time", "Удобное время звонка")
+            +b("input")(type="text" name="time" required).input._time.mask._time#time.__input
+          +e.col
+            +label("text", "Ваше сообщение")._required-red
+            +b("textarea")(name="text" required).input._textarea#text.__input
+          +checkbox("Я согласен на <a href=\"#\">обработку персональных данных</a>").__checkbox
+          +e.button-container._right
+            +b("input")(type="submit" value="Заказать").button._yellow
+      +e.contacts-container
+        +contacts("Наш адрес").__contacts
+      +e.map
+        script(charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A36b8fd1c8001f21a63d4250846074dae8f7f13a65600412cc8e79f28f7a4c33a&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false")

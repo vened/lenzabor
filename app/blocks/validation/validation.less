@@ -1,0 +1,20 @@
+// Для импорта в файл подключения: @import "./app/blocks/validation/validation.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.validation {
+
+  &_valid{
+    border: 1px solid green !important;
+  }
+
+  &_invalid{
+    border: 1px solid #d4244d !important;
+  }
+  &_invalid:focus{
+    box-shadow: none !important;
+  }
+
+}

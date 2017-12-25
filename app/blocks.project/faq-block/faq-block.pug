@@ -1,0 +1,17 @@
+mixin faq-block()
+  +b.faq-block&attributes(attributes)
+    +e("ul").options
+      +e("li").option._active
+        +e("a")(href="#").btn Скидки и акции
+      +e("li").option
+        +e("a")(href="#").btn Общие вопросы
+      +e("li").option
+        +e("a")(href="#").btn Особенности заборов
+      +e("li").option
+        +e("a")(href="#").btn._reset Сбросить
+          +e("span").x
+    +e.content
+      each item in faq
+        +e.item
+          +e("a")(href="#").title !{item.title}
+          +e("p").text !{item.text}

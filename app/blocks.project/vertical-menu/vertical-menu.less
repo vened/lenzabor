@@ -1,0 +1,104 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/vertical-menu/vertical-menu.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.vertical-menu {
+  @media (max-width: 767px) {
+    &_toggle {
+      .vertical-menu__title {
+        padding-right: 35px;
+        cursor: pointer;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 7px;
+          right: 17px;
+          height: 16px;
+          width: 8px;
+          background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+          background-size: contain;
+        }
+      }
+      .vertical-menu__list {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-family: @pt_serifbold;
+    font-size: 21px;
+    line-height: 1.5;
+    font-weight: normal;
+    color: #ffffff;
+    position: relative;
+    &_open {
+      &:after {
+        transform: rotate(90deg);
+        height: 8px;
+        width: 16px;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 12px;
+  }
+
+  &__item {
+    position: relative;
+    &_active {
+      .vertical-menu__link {
+        color: @main-color;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+    transition: @transition;
+    text-decoration: none;
+    position: relative;
+    &_arrow {
+      padding-left: 15px;
+      margin: 2px 0;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        height: 8px;
+        width: 5px;
+        background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%205.7011776%2010%22%20width%3D%225.701%22%20height%3D%2210%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23868686%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+        background-size: contain;
+      }
+    }
+    &_icon {
+      padding-left: 30px;
+      &:first-of-type {
+        margin-top: 11px;
+      }
+      &:last-of-type {
+        margin-bottom: 11px;
+      }
+    }
+    &_hover {
+      &:hover {
+        color: @main-color;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #ffffff;
+  }
+
+}

@@ -1,0 +1,18 @@
+mixin contacts(title)
+  +b.contacts&attributes(attributes)
+    +e("h3").title !{title}
+    +e("ul").list
+      +e("li").item
+        +e("p").info !{contacts.address}
+        +iconsvg("map")(width="20" height="27").__icon
+      +e("li").item
+        +e("a")(href="tel:79219046435").info._link._phone !{contacts.phone1}
+        br
+        +e("a")(href="tel:78124081703").info._link._phone !{contacts.phone2}
+        +iconsvg("phone")(width="22" height="22").__icon
+      +e("li").item
+        +e("a")(href="mailto:" + contacts.email).info._link._mail !{contacts.email}
+        +iconsvg("mail")(width="22" height="22").__icon
+      +e("li").item
+        +e("p").info !{contacts.time}
+        +iconsvg("clock")(width="24" height="24").__icon

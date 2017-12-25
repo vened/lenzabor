@@ -1,0 +1,76 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/footer/footer.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.footer {
+  background-color: #363636;
+  border-top: 4px solid @main-color;
+  padding-top: 65px;
+  @media (max-width: 767px) {
+    padding-top: 35px;
+  }
+
+  &__container {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1199px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 767px) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    flex-shrink: 1;
+    @media (min-width: 1200px) {
+      max-width: 280px;
+      &_logo {
+        max-width: 158px;
+      }
+    }
+    @media (max-width: 1199px) {
+      width: 50%;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      &:last-of-type {
+        .footer__vertical-menu {
+          border-bottom: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    &_logo {
+      max-width: 158px;
+      text-align: center;
+      @media (max-width: 767px) {
+        order: 1;
+      }
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    font-size: 0;
+    margin-bottom: 34px;
+  }
+
+  &__vertical-menu {
+    margin-bottom: 17px;
+    @media (max-width: 767px) {
+      margin: 0;
+      padding: 17px 0;
+      border-bottom: 1px solid #484848;
+      text-align: left;
+    }
+  }
+
+}

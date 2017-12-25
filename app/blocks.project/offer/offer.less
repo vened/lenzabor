@@ -1,0 +1,40 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/offer/offer.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.offer {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+
+  &__circle {
+    flex-shrink: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: @main-color;
+    border-radius: 50%;
+    font-size: 0;
+    height: 53px;
+    width: 53px;
+  }
+
+  &__text {
+    flex-shrink: 1;
+    font-family: @museo_cyrl500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #2a2a2a;
+    margin-left: 15px;
+  }
+
+}

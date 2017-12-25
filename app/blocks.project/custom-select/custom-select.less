@@ -1,0 +1,104 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/custom-select/custom-select.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.custom-select {
+  position: relative;
+
+  &__drop-button {
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #c9c9c9;
+    border-radius: 25px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #2a2a2a;
+    padding: 13px 50px 13px 20px;
+    position: relative;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: @transition;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%) rotate(90deg);
+      height: 10px;
+      width: 6px;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.703%22%20viewBox%3D%220%200%205.7030619%209.9999429%22%3E%3Cpath%20d%3D%22M5.496%205.494l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.195a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23313131%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+    &_active {
+      border-color: transparent;
+      border-radius: 25px 25px 0 0;
+      box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.2);
+      &:before {
+        transform: translateY(-50%) rotate(-90deg);
+      }
+    }
+  }
+
+  &__drop-list{
+    background-color: #ffffff;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.2);
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  &__drop-item {
+    display: block;
+    overflow: hidden;
+    &_selected {
+      .custom-select__drop-link {
+        background-color: @main-color;
+        &:before {
+          background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.703%22%20viewBox%3D%220%200%205.7030619%209.9999429%22%3E%3Cpath%20d%3D%22M5.496%205.494l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.195a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23313131%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  &__drop-link {
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 11px 15px 11px 35px;
+    position: relative;
+    color: #2a2a2a;
+    text-decoration: none;
+    transition: @transition;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      transition: @transition;
+      height: 10px;
+      width: 6px;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23c9c9c9%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+    &:hover {
+      background-color: @main-color;
+      &:before {
+        background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.703%22%20viewBox%3D%220%200%205.7030619%209.9999429%22%3E%3Cpath%20d%3D%22M5.496%205.494l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.195a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23313131%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+}

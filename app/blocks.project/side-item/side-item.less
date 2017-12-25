@@ -1,0 +1,61 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/side-item/side-item.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.side-item {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  &_active {
+    .side-item__img {
+      border-color: @main-color;
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    border: 6px solid #cecece;
+    border-radius: 50%;
+    height: 148px;
+    width: 148px;
+    position: relative;
+    margin-bottom: 7px;
+  }
+
+  &__popup {
+    background-color: #ffffff;
+    border: 2px solid #e2e2e2;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    text-decoration: none;
+    transition: @transition;
+    height: 50px;
+    width: 50px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 20px;
+      width: 20px;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2027%2027%22%20width%3D%2227%22%20height%3D%2227%22%3E%3Cpath%20fill%3D%22%23231f20%22%20d%3D%22M26.588%2024.591l-6.654-6.68c1.712-1.966%202.649-4.437%202.649-7.01C22.583%204.89%2017.518%200%2011.29%200%205.065%200%200%204.89%200%2010.9c0%206.013%205.065%2010.902%2011.29%2010.902%202.338%200%204.567-.68%206.47-1.974l6.708%206.734c.28.283.656.438%201.06.438.382%200%20.743-.141%201.02-.397a1.388%201.388%200%200%200%20.04-2.012zM11.29%202.845c4.603%200%208.347%203.615%208.347%208.056%200%204.443-3.745%208.057-8.347%208.057-4.6%200-8.344-3.614-8.344-8.057%200-4.441%203.744-8.056%208.344-8.056zm0%200%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+    &:hover {
+      border-color: @main-color;
+      background-color: @main-color;
+    }
+  }
+
+}

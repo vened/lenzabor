@@ -1,0 +1,65 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/section-faq/section-faq.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.section-faq {
+  background: #ffffff url("../img/faq_bg.jpg") 0 100% no-repeat;
+  text-align: center;
+  @media (max-width: 1850px) {
+    background: #ffffff;
+  }
+
+  &__content {
+    width: 1170px;
+    padding: 75px 15px 100px;
+    margin: 0 auto;
+    position: relative;
+    @media (max-width: 1850px) {
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: calc(~"100% - 320px");
+        height: 475px;
+        width: 708px;
+        background: url("../img/faq_bg.jpg") 0 100% no-repeat;
+      }
+    }
+    @media (max-width: 1199px) {
+      width: 970px;
+      &:before {
+        display: none;
+      }
+    }
+    @media (max-width: 991px) {
+      padding: 40px 15px 50px;
+      width: 750px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  &__subheading {
+    font-size: 19px;
+    line-height: 24px;
+    color: #333333;
+    margin: 20px 0 50px;
+    @media (max-width: 991px) {
+      margin: 20px 0 30px;
+    }
+    @media (max-width: 767px) {
+      margin: 15px 0 25px;
+    }
+  }
+
+  &__faq-block {
+    padding-left: 390px;
+    @media (max-width: 1199px) {
+      padding-left: 0;
+    }
+  }
+
+}

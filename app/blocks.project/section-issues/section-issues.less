@@ -1,0 +1,142 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/section-issues/section-issues.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.section-issues {
+  font-size: 0;
+
+  &_item {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 20px 15px 80px;
+    @media (max-width: 1199px) {
+      width: 970px;
+    }
+    @media (max-width: 991px) {
+      width: 750px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 20px 0 0;
+    }
+  }
+
+  &__main {
+    box-shadow: 0 0 18px 0 rgba(0,0,0,.2);
+    display: inline-block;
+    width: 360px;
+    @media (max-width: 1199px) {
+      width: 270px;
+    }
+    @media (max-width: 767px) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__for-content {
+    display: inline-block;
+    width: calc(~"100% - 360px");
+    vertical-align: top;
+    padding-left: 100px;
+    @media (max-width: 1199px) {
+      width: calc(~"100% - 270px");
+      padding-left: 30px;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__block {
+    background-color: #f9f9f9;
+    font-family: @museo_cyrl500;
+    font-size: 16px;
+    color: #2a2a2a;
+    cursor: pointer;
+    padding: 13px 55px 13px 30px;
+    position: relative;
+    @media (max-width: 767px) {
+      padding: 13px 40px 13px 15px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: 39px;
+      height: 10px;
+      width: 6px;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23000000%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+      @media (max-width: 767px) {
+        right: 15px;
+      }
+    }
+    &_open {
+      &:after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__questions {
+    display: none;
+  }
+
+  &__question {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2a2a2a;
+    padding: 14px 55px 14px 30px;
+    position: relative;
+    text-decoration: none;
+    transition: @transition;
+    @media (max-width: 767px) {
+      padding: 14px 40px 14px 15px;
+    }
+    &:before {
+      background-color: #e4e4e4;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 30px;
+      width: calc(~"100% - 69px");
+      height: 1px;
+    }
+    &_active, &:hover {
+      background-color: @main-color;
+    }
+    &:last-of-type {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    @media (max-width: 767px) {
+      padding: 30px 15px;
+    }
+    @media (min-width: 768px) {
+      display: none !important;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    color: #2a2a2a;
+    p {
+      margin-top: 15px;
+    }
+  }
+
+}

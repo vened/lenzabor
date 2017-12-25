@@ -1,0 +1,22 @@
+include ../blocks.project/includes
+
+doctype html
+html(lang="ru")
+  include templates/head/head
+    block head
+      - var pageTitle = "Заборы для дачи в Спб и Ленобласти";
+
+  +page
+
+    +header(false).__header
+
+
+    +b.content.__content
+
+      .grid
+        +breadcrumbs(["Лензабор", "Справочный центр", "Скидки и акции"])._top
+
+      +section-issues._item
+
+
+    +footer(false).__footer

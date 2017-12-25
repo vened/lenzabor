@@ -1,0 +1,77 @@
+mixin footer(isMain)
+  +b("footer").footer&attributes(attributes)
+    .grid
+      +e.container
+        +e.item._logo
+          if isMain
+            +e.logo
+              +e("img")(src="img/logo-footer.svg" alt="Лензабор.ру" width="158" height="125").logo-img
+          else
+            +e("a")(href="/").logo
+              +e("img")(src="img/logo-footer.svg" alt="Лензабор.ру" width="158" height="125").logo-img
+          +socials.__socials
+        +e.item
+          +b("nav").vertical-menu._toggle.__vertical-menu
+            +e("h3").title Заборы под ключ
+            +e("ul").list
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Из профлиста
+              +e("li").item._active
+                +e("a")(href="#").link._arrow._hover Из металлического штакетника
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Из сварной сетки Gitter
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Из сетки рабицы
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Из дерева
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Из поликарбоната
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover С кирпичными столбами
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover На ленточном фундаменте
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover С применением декора
+        +e.item
+          +b("nav").vertical-menu._toggle.__vertical-menu
+            +e("h3").title Комплектующие
+            +e("ul").list
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Купить комплектующие
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Откатные ворота
+          +b("nav").vertical-menu._toggle.__vertical-menu
+            +e("h3").title Фото работ
+            +e("ul").list
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Фото заборов из профнастила
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Фото заборов из Gittera
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Фото заборов из штакетника
+          +b("nav").vertical-menu._toggle.__vertical-menu
+            +e("h3").title Стоимость
+            +e("ul").list
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Цены
+              +e("li").item
+                +e("a")(href="#").link._arrow._hover Калькулятор
+        +e.item
+          +b.vertical-menu._toggle.__vertical-menu
+            +e("h3").title Наши контакты
+            +e("ul").list
+              +e("li").item
+                +e("p").link._icon !{contacts.address}
+                +iconsvg("map")(width="20" height="27").__icon
+              +e("li").item
+                +e("a")(href="tel:79219046435").link._icon._hover !{contacts.phone1}
+                br
+                +e("a")(href="tel:78124081703").link._icon._hover !{contacts.phone2}
+                +iconsvg("phone")(width="22" height="22").__icon
+              +e("li").item
+                +e("a")(href="mailto:" + contacts.email).link._icon._hover !{contacts.email}
+                +iconsvg("mail")(width="22" height="22").__icon
+              +e("li").item
+                +e("p").link._icon !{contacts.time}
+                +iconsvg("clock")(width="24" height="24").__icon
+    +copyright

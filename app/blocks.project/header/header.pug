@@ -1,0 +1,26 @@
+mixin header(isMain)
+  +b("header").header&attributes(attributes)
+    +e.top-wrapper
+      +e.top
+        +e.top-inner
+          +hamburger.__hamburger
+          if isMain
+            +e.logo
+              +e("img")(src="img/logo-header.svg" alt="Лензабор.ру" width="285" height="66").logo-img
+          else
+            +e("a")(href="/").logo
+              +e("img")(src="img/logo-header.svg" alt="Лензабор.ру" width="285" height="66").logo-img
+          +b.offer.__offer
+            +e.circle
+              +iconsvg("alarm")(width="29" height="33").__img
+            +e.text Менеджер сделает расчет за 2 минуты.
+          +b.offer.__offer
+            +e.circle
+              +iconsvg("medal")(width="24" height="32").__img
+            +e.text На все ограждения гарантия 2 года
+          +b.phones-block.__phones-block
+            +e("a")(href="https://api.whatsapp.com/send?phone=78129046435").phone._whatsapp +7 (812) 904-64-35
+            +e("a")(href="tel:+78124081703").phone +7 (812) 408-17-03
+        .grid
+          +top-menu.__top-menu
+    block

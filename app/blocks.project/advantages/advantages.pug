@@ -1,0 +1,20 @@
+mixin advantages()
+  +b.advantages&attributes(attributes)
+    +e.container.clearfix
+      +e.left
+        +e("h2").header Заборы для дачи в спб и лен. области дешево
+        +e("p").text Компания «Лензабор» производит и устанавливает по доступным ценам заборы для дачи в Санкт-Петербурге и Ленобласти. Помимо монтажа ограждений под ключ мы продаем комплектующие для заборов, а также готовые комплекты для установки калиток и ворот на вашем участке.
+      +e.right
+        +e("h2").header Наши преимущества
+        +e.advantage
+          +e.img-container
+            +iconsvg("alarm")(width="29" height="33").__img
+          +e("p").title Менеджер сделает расчет за 2 минуты. Замерщик приедет на следующий день!
+        +e.advantage
+          +e.img-container
+            +iconsvg("medal")(width="24" height="32").__img
+          +e("p").title На все ограждения (материалы и работы) у нас гарантия 2 года.
+        +e.advantage
+          +e.img-container
+            +iconsvg("tools")(width="28" height="28").__img
+          +e("p").title Монтаж забора осуществляют граждане РФ с пропиской в ЛО.

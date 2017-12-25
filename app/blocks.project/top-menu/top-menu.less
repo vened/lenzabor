@@ -1,0 +1,240 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/top-menu/top-menu.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.top-menu {
+  position: relative;
+  z-index: 10;
+  @media (max-width: 991px) {
+    background-color: #ffffff;
+    box-shadow: 0 0 51px 0 rgba(0, 0, 0, 0.12);
+    width: 375px;
+    overflow: hidden;
+  }
+  @media (min-width: 992px) {
+    display: block !important;
+  }
+  @media (max-width: 479px) {
+    width: 270px;
+  }
+
+  &__list {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    @media (max-width: 991px) {
+      display: block;
+      margin-right: -20px;
+      height: 100vh;
+      padding: 95px 60px 95px 40px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    @media (max-width: 479px) {
+      padding: 80px 35px 80px 15px;
+    }
+  }
+
+  &__item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: relative;
+    margin: 0 15px 15px 0;
+    @media (max-width: 991px) {
+      margin: 0;
+      border-bottom: 1px solid #e1e1e1;
+      &:last-of-type {
+        border-bottom: 0;
+      }
+    }
+    &:hover > .top-menu__submenu {
+      transform: rotateX(0deg);
+      visibility: visible;
+      opacity: 1;
+    }
+    &:hover, &_active {
+      .top-menu__link {
+        background-color: #ffffff;
+        border-color: #ffffff;
+        &:before {
+          background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.703%22%20viewBox%3D%220%200%205.7030619%209.9999429%22%3E%3Cpath%20d%3D%22M5.496%205.494l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.195a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23313131%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+          background-size: contain;
+        }
+        @media (max-width: 991px) {
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+    }
+    &_active {
+      .top-menu__link {
+        box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.2);
+        color: @main-color;
+        @media (max-width: 991px) {
+          box-shadow: none;
+        }
+      }
+    }
+    &_has-child:hover {
+      .top-menu__link {
+        background-color: #ffffff;
+        border-color: #ffffff;
+        border-radius: 25px 25px 0 0;
+        box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.1);
+        &:before {
+          height: 6px;
+          width: 10px;
+          background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2010.000098%205.7028442%22%20width%3D%2210%22%20height%3D%225.703%22%3E%3Cpath%20d%3D%22M4.506%205.496l-4.3-4.3a.7.7%200%200%201%20.99-.991L5%204.01%208.805.206a.7.7%200%200%201%20.99.99l-4.3%204.3a.696.696%200%200%201-.99%200zm0%200%22%20fill%3D%22%23313131%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+          background-size: contain;
+          @media (max-width: 991px) {
+            height: 10px;
+            width: 6px;
+            background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23c9c9c9%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+            background-size: contain;
+          }
+        }
+        @media (max-width: 991px) {
+          background-color: transparent;
+          border-color: transparent;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    }
+    &_open {
+      .top-menu__link {
+        &:before {
+          transform: translateY(-50%) rotate(90deg);
+        }
+      }
+    }
+  }
+
+  &__link {
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 25px;
+    padding: 10px 25px 10px 15px;
+    position: relative;
+    text-align: center;
+    &:before {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      height: 10px;
+      width: 6px;
+      transform: translateY(-50%);
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23c9c9c9%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+    @media (max-width: 991px) {
+      border: 0;
+      border-radius: 0;
+      padding: 12px 35px 12px 28px;
+      text-align: left;
+      &:before {
+        right: 20px;
+      }
+    }
+  }
+
+  &__link, &__submenu-link {
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2a2a2a;
+    text-decoration: none;
+    transition: @transition;
+    @media (max-width: 1199px) {
+      font-size: 14px;
+    }
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+  }
+
+  &__submenu {
+    background-color: #ffffff;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.1);
+    padding: 0 25px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform-style: preserve-3d;
+    transform: rotateX(-90deg);
+    transition: @transition;
+    overflow: hidden;
+    width: 100%;
+    z-index: 10;
+    @media (max-width: 991px) {
+      display: none;
+      background-color: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      position: static;
+      transform-style: flat;
+      transform: rotateX(0deg);
+      transition: none;
+      visibility: visible;
+      opacity: 1;
+      padding: 0 0 23px 40px;
+    }
+  }
+
+  &__submenu-item {
+    &:hover, &_active {
+      .top-menu__submenu-link {
+        color: @main-color;
+        &:before {
+          background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.703%22%20viewBox%3D%220%200%205.7030619%209.9999429%22%3E%3Cpath%20d%3D%22M5.496%205.494l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.195a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23313131%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      &:hover {
+        .top-menu__submenu-link {
+          color: #2a2a2a;
+          &:before {
+            background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23c9c9c9%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+
+  &__submenu-link {
+    position: relative;
+    padding-left: 15px;
+    margin: 10px 0;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      height: 10px;
+      width: 6px;
+      transition: @transition;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23c9c9c9%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+      @media (max-width: 991px) {
+        top: 11px;
+      }
+    }
+    @media (max-width: 991px) {
+      font-size: 16px;
+      margin: 0;
+      padding: 5px 0 5px 20px;
+    }
+  }
+
+}

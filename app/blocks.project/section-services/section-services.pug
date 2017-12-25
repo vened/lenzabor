@@ -1,0 +1,26 @@
+mixin section-services()
+  +b("section").section-services&attributes(attributes)
+    .grid
+      +b("h2").heading.__heading Наши услуги - установка заборов
+    .grid
+      .row
+        +e.list
+          - let i = 1;
+          each item in services
+            if i <= 3 || i > 4
+              +e.item
+                +b.service.__service
+                  +e.excerpt
+                    +e.excerpt-inner
+                      +e("h4").title._black !{item.title}
+                      +e("p").description._excerpt !{item.description}
+                  +e.top(style="background:url('img/services/" + item.img + "');background-size:cover")
+                    +e("h4").title._white !{item.title}
+                  +e.bottom
+                    +e("p").description._bottom !{item.descriptionSm}
+                    +b("a")(href="#").button._white.__button Подробнее
+            else
+              +e.item
+                +service-slider.__service-slider
+            - i++;
+        +b("a")(href="#").button._yellow.__button Показать еще

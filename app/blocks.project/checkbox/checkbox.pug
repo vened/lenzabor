@@ -1,0 +1,9 @@
+mixin checkbox(text)
+  +b("label").checkbox&attributes(attributes)
+    if text
+      +e("input")(type="checkbox" hidden).input
+      +e("span").custom
+      +e("span").text !{text}
+    else
+      +e("input")(type="checkbox" hidden).input
+      +e("span").custom

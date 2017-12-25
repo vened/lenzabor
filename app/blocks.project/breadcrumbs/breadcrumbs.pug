@@ -1,0 +1,10 @@
+mixin breadcrumbs(arr)
+  +b("ul").breadcrumbs&attributes(attributes)
+    - var i = 0;
+    each item in arr
+      if (arr.length - 1) != i
+        +e("li").item
+          +e("a")(href="#").link= item
+      else
+        +e("li").item= item
+      - i++;

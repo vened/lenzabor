@@ -1,0 +1,51 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/breadcrumbs/breadcrumbs.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.breadcrumbs {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2a2a2a;
+
+  &_top {
+    margin: 20px 0;
+  }
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    margin-right: 25px;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -18px;
+      height: 10px;
+      width: 6px;
+      transform: translateY(-50%);
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23000000%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+    &:last-child {
+      margin-right: 0;
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: #2a5dba;
+    text-decoration: underline;
+    transition: @transition;
+    &:hover {
+      color: @main-color;
+      text-decoration: none;
+    }
+  }
+
+}

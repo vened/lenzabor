@@ -1,0 +1,112 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/price-package/price-package.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.price-package {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  transition: @transition;
+  margin: 10px 0;
+  max-width: 346px;
+  width: 100%;
+  @media (max-width: 991px) {
+    box-shadow: none;
+  }
+  &:hover {
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+    @media (max-width: 991px) {
+      box-shadow: none;
+    }
+    .price-package__top {
+      color: #fefefe;
+      &:before {
+        background-color: rgba(0, 0, 0, .7);
+      }
+    }
+  }
+
+  &__top {
+    border-radius: 20px 20px 0 0;
+    padding: 25px 15px;
+    position: relative;
+    color: #2e2e2e;
+    transition: @transition;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: @main-color;
+      transition: @transition;
+    }
+  }
+
+  &__top-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__name {
+    font-size: 25px;
+    font-weight: normal;
+  }
+
+  &__old-price {
+    font-size: 27px;
+    margin: 10px 0;
+    text-decoration: line-through;
+  }
+
+  &__price {
+    font-family: @museo_cyrl700;
+    font-size: 71px;
+    line-height: 71px;
+  }
+
+  &__trigger {
+    font-size: 16px;
+    line-height: 25px;
+    margin-top: 10px;
+  }
+  &__date {
+    display: block;
+    font-family: @museo_cyrl700;
+    font-size: 19px;
+  }
+
+  &__bottom {
+    padding: 10px 15px 40px;
+    overflow: hidden;
+  }
+
+  &__parameters {
+    margin-bottom: 30px;
+  }
+
+  &__parameter {
+    font-size: 16px;
+    line-height: 20px;
+    color: #2e2e2e;
+    padding: 15px 0;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 210px;
+      border-bottom: 2px dotted #dadada;
+    }
+  }
+
+}

@@ -1,0 +1,31 @@
+{
+  "sliderWorks" : {
+
+    "slide1" : {
+      "img" : "img/works/1.jpg",
+      "preview" : "img/works/1-preview.jpg",
+      "alt" : "Название забора 1"
+    },
+    "slide2" : {
+      "img" : "img/works/2.jpg",
+      "preview" : "img/works/2-preview.jpg",
+      "alt" : "Название забора 2"
+    },
+    "slide3" : {
+      "img" : "img/works/3.jpg",
+      "preview" : "img/works/3-preview.jpg",
+      "alt" : "Название забора 3"
+    },
+    "slide4" : {
+      "img" : "img/works/4.jpg",
+      "preview" : "img/works/4-preview.jpg",
+      "alt" : "Название забора 4"
+    },
+    "slide5" : {
+      "img" : "img/works/5.jpg",
+      "preview" : "img/works/5-preview.jpg",
+      "alt" : "Название забора 5"
+    }
+
+  }
+}

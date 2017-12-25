@@ -1,0 +1,62 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/contacts/contacts.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.contacts {
+
+  &__title {
+    font-family: @pt_serifbold;
+    font-size: 25px;
+    line-height: 1.5;
+    font-weight: normal;
+    color: #242424;
+    @media (max-width: 991px) {
+      padding-left: 30px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    &:first-of-type {
+      margin-top: 20px;
+    }
+  }
+
+  &__info {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #363636;
+    text-decoration: none;
+    padding-left: 30px;
+    position: relative;
+    &:first-of-type {
+      margin-top: 14px;
+    }
+    &:last-of-type {
+      margin-bottom: 14px;
+    }
+    &_link {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &_phone {
+      color: #2a5dba;
+    }
+    &_mail {
+      color: #d15050;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #363636;
+  }
+
+}

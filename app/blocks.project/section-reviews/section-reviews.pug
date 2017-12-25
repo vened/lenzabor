@@ -1,0 +1,11 @@
+mixin section-reviews()
+  +b("section").section-reviews&attributes(attributes)
+    block
+    +e.container
+      +e.slider
+        each item in reviews
+          +e.item
+            +e("img")(src="" + item.img alt="" + item.autor width="150" height="150").img
+            +e("h4").autor !{item.autor}
+            +e("p").text !{item.text}
+      +e.navigation

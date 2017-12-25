@@ -1,0 +1,17 @@
+mixin section-issues()
+  +b("section").section-issues&attributes(attributes)
+    +e.main
+      - var i = 1;
+      each block in issues
+        +e.item._desktop._mobile
+          +e("p").block !{block.title}
+          +e.questions
+            - var j = 1;
+            each question in block.questions
+              +e("a")(class="question" + ((i == 1 && j == 1) ? "_active" : "") href="#tab" + i + "-" + j) !{question.title}
+              +e(class="content" + ((i == 1 && j == 1) ? "_open" : "") id="tab" + i + "-" + j)
+                +b("h2").heading._line.__heading !{question.title}
+                +e.text !{question.content}
+              - j++;
+        - i++;
+    +e.for-content

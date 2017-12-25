@@ -1,0 +1,15 @@
+mixin top-menu()
+  +b("nav").top-menu&attributes(attributes)
+    +e("ul").list
+      - var i = 1;
+      each item in topMenu
+        +e("li")(class="item" + ((i == 6) ? "_active" : "" ) class='' + (item.subMenu ? '_has-child' : '' ))
+          +e("a")(href=item.link).link= item.text
+          if item.subMenu
+            +e("ul").submenu
+              - var j = 1;
+              each subItem in item.subMenu
+                +e("li")(class="submenu-item" + ((j == 1) ? "_active" : "" ))
+                  +e("a")(href=subItem.link).submenu-link !{subItem.text}
+                - j++;
+        - i++

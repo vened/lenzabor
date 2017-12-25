@@ -1,0 +1,62 @@
+mixin section-prices()
+  +b("section").section-prices&attributes(attributes)
+    block
+    .grid
+      +e.list
+        - let i = 1;
+        each item in pricePackages
+          +e.item
+            +b.price-package
+              +e.top(style="background:url('img/services/" + item.img + "');background-size:cover")
+                +e.top-content
+                  +e("h3").name !{item.name}
+                  +e.old-price !{item.oldPrice}
+                  +e.price !{item.price}
+                  +e.trigger Цена действительна до:
+                    | <span class="price-package__date">31.03.2017</span>
+                    | за погонный метр
+              +e.bottom
+                +e("ul").parameters
+                  each parameter in item.parameters
+                    +e("li").parameter= parameter
+                +b("a")(href="#package" + i).button._gray.__button.popup-with-zoom-anim Заказать
+              +b.form-price._popup.zoom-anim-dialog.mfp-hide(id="package" + i)
+                +e.container
+                  +e("h3").heading Заполните форму
+                  +b("form")(action="#" method="post" enctype="multipart/form-data" autocomplete="off").form.__form
+                    +e.col._50
+                      +label("name" + i, "Имя")._required-red
+                      +b("input")(type="text" name="name" required id="name" + i).input._name.__input
+                    +e.col._50
+                      +label("phone" + i, "Телефон")
+                      +b("input")(type="text" name="phone" required id="phone" + i).input._phone.mask._phone.__input
+                    +e.col._50
+                      +label("email" + i, "Email")._required-red
+                      +b("input")(type="email" name="email" required id="email" + i).input._email.__input
+                    +e.col._50
+                      +label("width" + i, "Длина забора, М.П.")._required-gray
+                      +b("input")(type="text" name="width" required id="width" + i).input._ruler.__input
+                    +e.col
+                      +label("text" + i, "Ваше сообщение")._required-red
+                      +b("textarea")(name="text" required id="text" + i).input._textarea.__input
+                    +e.col
+                      +label("file" + i, "Прикрепите фото участка и (или) техническое задание")
+                      +b.input-file
+                        +e("input")(type="file" name="file" multiple required id="file" + i).input
+                        +e("label")(for="file" + i).label
+                          +e("span").field
+                          +e.button Обзор
+                    +b("input")(type="submit" value="Отправить").button._yellow.__button
+                  +e.top
+                    +e.left
+                      +e("h3").name !{item.name}
+                      +e.price-block
+                        +e.old-price !{item.oldPrice}
+                        +e.price !{item.price}
+                      +e.trigger Цена действительна до:<br/>
+                        | <span class="form-price__date">31.03.2017</span>
+                        | за погонный метр
+                    +e.right
+                      +b("a")(href="#").button._icon-left._calculator Другие варианты
+          - i++;
+      +e.navigation

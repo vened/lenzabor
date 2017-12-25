@@ -1,0 +1,69 @@
+mixin calculator-panel()
+  +b.calculator-panel&attributes(attributes)
+    +e.side
+      +e.name._edit
+        +e("label")(for="input1").label Сторона 1
+        +e("input")(type="text" name="side1" value="Сторона 1").input#input1
+        +e.controls
+          +e("a")(href="#" data-tooltip="Вы можете задать произвольное название стороны забора").control-btn._edit.tooltip
+          +e("a")(href="#" data-tooltip="Удалить").control-btn._delete.tooltip
+          +e("a")(href="#" data-tooltip="Сохранить").control-btn._save.tooltip
+      +e.results
+        +e.item
+          +e.result-name Работа:
+          +e.result-price
+            +e("span").result-price-i 334 200
+            |  р.
+        +e.item
+          +e.result-name Материалы:
+          +e.result-price
+            +e("span").result-price-i 154 435
+            |  р.
+    +e.side
+      +e.name
+        +e("label")(for="input2").label Сторона 2
+        +e("input")(type="text" name="side2" value="Сторона 2").input#input2
+        +e.controls
+          +e("a")(href="#" data-tooltip="Вы можете задать произвольное название стороны забора").control-btn._edit.tooltip
+          +e("a")(href="#" data-tooltip="Удалить").control-btn._delete.tooltip
+          +e("a")(href="#" data-tooltip="Сохранить").control-btn._save.tooltip
+      +e.results
+        +e.item
+          +e.result-name Работа:
+          +e.result-price
+            +e("span").result-price-i 124 200
+            |  р.
+        +e.item
+          +e.result-name Материалы:
+          +e.result-price
+            +e("span").result-price-i 87 435
+            |  р.
+    +e.side
+      +e.name
+        +e("label")(for="input3").label Сторона 3
+        +e("input")(type="text" name="side3" value="Сторона 3").input#input3
+        +e.controls
+          +e("a")(href="#" data-tooltip="Вы можете задать произвольное название стороны забора").control-btn._edit.tooltip
+          +e("a")(href="#" data-tooltip="Удалить").control-btn._delete.tooltip
+          +e("a")(href="#" data-tooltip="Сохранить").control-btn._save.tooltip
+      +e.results
+        +e.item
+          +e.result-name Работа:
+          +e.result-price
+            +e("span").result-price-i._loading
+            |  р.
+        +e.item
+          +e.result-name Материалы:
+          +e.result-price
+            +e("span").result-price-i._loading
+            |  р.
+    +e.row
+      +e("a")(href="#").add-side-btn <span>Добавить сторону</span>
+      +e("a")(href="#").visualizer-btn <span>Визуализатор</span>
+    +e.bottom
+      +e.total-price.tooltip(data-tooltip='Любые расчеты в сервисе "Калькулятор" носят исключительно информационный характер, не являются предложением оферты и могут отличаться от расчетов в офисе или удаленных расчетов, произведенных нашим менеджером. Более точные расчеты будут предоставлены Вам после отправки запроса на получение подробной сметы. Спасибо!') <span>Итого: 1778 р.</span>
+      br
+      +b("a")(href="#").button._gray.__button Получить смету
+      br
+      +e("a")(href="#" data-tooltip="Сбросить все расчеты?").second-btn._reset.tooltip Сбросить
+      +e("a")(href="#").second-btn._print Печать

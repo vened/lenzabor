@@ -1,0 +1,45 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/label/label.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.label {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2a2a2a;
+  margin: 0 0 10px 25px;
+
+  &_required-gray {
+    .label__text {
+      &:before {
+        content: "*";
+        font-size: 16px;
+        color: #2a2a2a;
+        position: absolute;
+        right: -10px;
+        top: 0;
+      }
+    }
+  }
+
+  &_required-red {
+    .label__text {
+      &:before {
+        content: "*";
+        font-size: 16px;
+        color: #d72626;
+        position: absolute;
+        right: -10px;
+        top: 0;
+      }
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    position: relative;
+  }
+
+}

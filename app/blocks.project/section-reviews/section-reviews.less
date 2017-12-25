@@ -1,0 +1,165 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/section-reviews/section-reviews.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.section-reviews {
+  overflow: hidden;
+
+  &_index {
+    background-color: #f7f7f7;
+    padding-top: 70px;
+    text-align: center;
+    @media (max-width: 991px) {
+      padding: 45px 0 40px;
+    }
+    .section-reviews__heading {
+      margin-bottom: 45px;
+      @media (max-width: 991px) {
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  &__container {
+    width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    @media (max-width: 1199px) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__slider {
+    @media (max-width: 767px) {
+      background-color: #ffffff;
+      padding: 0 15px;
+    }
+  }
+
+  .slick-active {
+    background-color: #ffffff;
+    padding: 38px 70px 150px;
+    margin: 0 50px;
+    width: 500px;
+    @media (max-width: 991px) {
+      margin: 0;
+    }
+    @media (max-width: 767px) {
+      padding: 38px 0 150px;
+    }
+  }
+
+  .slick-slide {
+    &:not(.slick-active) {
+      transform: scale(0.7);
+      opacity: 0.4;
+      height: 300px;
+      width: 270px;
+      overflow: hidden;
+      padding-top: 27px;
+      @media (max-width: 767px) {
+        transform: scale(1);
+        opacity: 1;
+        height: auto;
+        padding-top: 38px;
+      }
+    }
+    @media (max-width: 767px) {
+      padding: 38px 0 150px;
+    }
+  }
+
+  &__img {
+    border-radius: 50%;
+    height: 103px;
+    width: 103px;
+  }
+
+  &__autor {
+    font-family: @museo_cyrl700;
+    font-size: 25px;
+    font-weight: normal;
+    color: #292929;
+    margin: 25px 0 15px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+  }
+
+  &__navigation {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+  }
+
+  &__prev, &__next {
+    background-color: transparent;
+    border: 1px solid #cccccc;
+    border-radius: 25px;
+    display: inline-block;
+    font-family: @museo_cyrl500;
+    font-size: 16px;
+    color: #333333;
+    cursor: pointer;
+    padding: 9px 30px;
+    position: relative;
+    text-align: center;
+    transition: @transition;
+    width: 195px;
+    @media (max-width: 479px) {
+      font-size: 14px;
+      padding: 7px 20px;
+      width: 130px;
+    }
+    &:hover {
+      background-color: @main-color;
+      border-color: @main-color;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 10px;
+      width: 6px;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.701%22%20viewBox%3D%220%200%205.7011776%2010%22%3E%3Cpath%20d%3D%22M5.496%205.495l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.196a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23333333%22%2F%3E%3C%2Fsvg%3E");
+      background-size: contain;
+      @media (max-width: 479px) {
+        display: none;
+      }
+    }
+  }
+  &__prev {
+    margin-right: 30px;
+    padding-left: 43px;
+    @media (max-width: 479px) {
+      margin-right: 10px;
+      padding-left: 20px;
+    }
+    &:before {
+      left: 25px;
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+  &__next {
+    padding-right: 43px;
+    @media (max-width: 479px) {
+      padding-right: 20px;
+    }
+    &:before {
+      right: 25px;
+    }
+  }
+
+}

@@ -1,0 +1,115 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/section-prices/section-prices.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.section-prices {
+  background-color: #ffffff;
+  overflow: hidden;
+
+  &_index {
+    text-align: center;
+    padding: 65px 0 55px;
+    @media (max-width: 991px) {
+      padding: 45px 0;
+    }
+  }
+
+  &__subheading {
+    font-size: 16px;
+    line-height: 25px;
+    color: #353535;
+    padding: 20px 130px 15px;
+    @media (max-width: 991px) {
+      padding: 15px 0 25px;
+    }
+  }
+
+  &__list {
+    margin: 0 -26px;
+    @media (max-width: 1199px) {
+      margin: 0 -12px;
+    }
+    @media (max-width: 767px) {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    padding: 20px 26px 0;
+    &:nth-of-type(2) {
+      margin-top: -20px;
+    }
+    @media (max-width: 1199px) {
+      padding: 20px 12px 0;
+    }
+    @media (max-width: 991px) {
+      padding: 0 12px;
+      &:nth-of-type(2) {
+        margin-top: 0;
+      }
+    }
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
+  &__navigation {
+    font-size: 0;
+    margin-top: 30px;
+    padding: 0 80px;
+    position: relative;
+    display: none;
+    @media (max-width: 991px) {
+      display: inline-block;
+    }
+  }
+
+  .slick-dots {
+    display: inline-block;
+    li {
+      display: inline-block;
+      border: 1px solid #242424;
+      border-radius: 50%;
+      margin-right: 14px;
+      height: 12px;
+      width: 12px;
+      cursor: pointer;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    .slick-active {
+      background-color: #242424;
+    }
+    button {
+      display: none;
+    }
+  }
+
+  &__prev, &__next {
+    display: inline-block;
+    font-size: 0;
+    height: 15px;
+    width: 23px;
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2214.452%22%20width%3D%2221%22%20viewBox%3D%220%200%2021%2014.452328%22%3E%3Cpath%20d%3D%22M20.715%206.536l-6.25-6.25a.976.976%200%201%200-1.38%201.38l4.581%204.583H.976a.977.977%200%200%200%200%201.954h16.69l-4.582%204.582a.976.976%200%201%200%201.38%201.381l6.25-6.25c.381-.38.381-.999%200-1.38zm0%200%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+    background-size: contain;
+    transition: @transition;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &:hover {
+      opacity: 0.1;
+    }
+  }
+  &__prev {
+    transform: translateY(-50%) rotate(180deg);
+    left: 0;
+  }
+  &__next {
+    right: 0;
+  }
+
+}

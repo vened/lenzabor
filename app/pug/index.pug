@@ -1,0 +1,40 @@
+include ../blocks.project/includes
+
+doctype html
+html(lang="ru")
+  include templates/head/head
+    block head
+      - var pageTitle = "Заборы для дачи в Спб и Ленобласти";
+
+  +page
+
+    +header(true)._index.__header
+      .grid
+        +e.bottom
+          +e("h1").header Установка заборов
+          +e("h3").subheader в Ленинградской области и Санкт-Петербурге
+
+
+    +b.content._gray.__content
+
+      +advantages._index
+
+      +section-services
+
+      +section-prices._index
+        .grid
+          +b("h2").heading.__heading Лучшие цены
+          +e("p").subheading Почти 80% клиентов выбирают типовые комплектации заборов, не переплачивая за особые технологические решения и нестандартные материалы. Если вам нужен просто забор - эти предложения для вас. Но помните, ничто не ограничивает Вашу фантазию!
+
+      +section-works._index
+        .grid
+          +b("h2").heading.__heading Примеры работ
+
+      +section-reviews._index
+        .grid
+          +b("h2").heading.__heading Отзывы наших клиентов
+
+      +section-faq
+
+
+    +footer(true).__footer

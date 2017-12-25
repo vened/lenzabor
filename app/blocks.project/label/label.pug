@@ -1,0 +1,3 @@
+mixin label(forAttr, text)
+  +b("label")(for="" + forAttr).label&attributes(attributes)
+    +e("span").text= text

@@ -1,0 +1,194 @@
+mixin section-calculator()
+  +b.section-calculator&attributes(attributes)
+    +e.grid.clearfix
+      +e.content
+        +b("h1").heading._line.__heading Калькулятор расчета стоимости забора
+        +e("p").text._offset-left Стороны забора
+        +b.custom-select.__custom-select
+          +e("a")(href="javascript:void(0);").drop-button Сторона 1
+          +e("ul").drop-list
+            +e("li").drop-item._selected
+              +e("a")(href="side1").drop-link Сторона 1
+            +e('li').drop-item
+              +e("a")(href="side2").drop-link Сторона 2
+            +e('li').drop-item
+              +e("a")(href="side3").drop-link Сторона 3
+          +e("input")(type="hidden" name="side" value="side1").drop-hidden-input
+
+        +e.step
+          +e("h3").step-title ШАГ 1 - Выберите тип забора
+          +e.row
+            - let i = 1;
+            each val in ["Из сетки рабицы", "Из сетки ГИТТЕР", "Из профнастила", "Из штакетника", "Из поликарбоната", "Из горизонтального штакетника", "Из деревянного штакетника", "Из дерева (плетенка)"]
+              +e.col
+                +b("label")(class="side-item" + ((i == 1) ? "_active" : "") for="fence_type" + i)._calculator.__side-item
+                  +e.img(style="background:url(img/calculator/type/" + i + ".jpg) center no-repeat;background-size:cover")
+                    +e("a")(href="img/calculator/type/" + i + ".jpg").popup
+                  br
+                  +b.radio
+                    if i == 1
+                      +e("input")(type="radio" name="fence_type" value=i checked id="fence_type" + i).input
+                    else
+                      +e("input")(type="radio" name="fence_type" value=i id="fence_type" + i).input
+                    +e("span").label
+                      +e("span").dot
+                      +e("span").text= val
+              - i++;
+
+        +e.step
+          +e("h3").step-title._offset-bottom ШАГ 2 - Выберите высоту забора
+          +b.custom-select.__custom-select
+            +e("a")(href="javascript:void(0);").drop-button 1,5 м
+            +e("ul").drop-list
+              +e("li").drop-item._selected
+                +e("a")(href="height_1.5").drop-link 1,5 м
+              +e('li').drop-item
+                +e("a")(href="height_2").drop-link 2 м
+            +e("input")(type="hidden" name="height" value="side1").drop-hidden-input
+
+        +e.step
+          +e("h3").step-title ШАГ 3 - Выберите модификацию забора
+          +e.row
+            - let i = 1;
+            each val in ["Штакетник металлический 1500х136х0,5мм, односторонний полиэстр", "Штакетник металлический 1500х136х0,5мм, двухсторонний полиэстр"]
+              +e.col
+                +b("label")(class="side-item" + ((i == 1) ? "_active" : "") for="modification" + i)._calculator.__side-item
+                  +e.img(style="background:url(img/calculator/modification/1.jpg) center no-repeat;background-size:cover")
+                    +e("a")(href="img/calculator/modification/1.jpg").popup
+                  br
+                  +b.radio
+                    if i == 1
+                      +e("input")(type="radio" name="modification" value=i checked id="modification" + i).input
+                    else
+                      +e("input")(type="radio" name="modification" value=i id="modification" + i).input
+                    +e("span").label
+                      +e("span").dot
+                      +e("span").text= val
+              - i++;
+
+        +e.step
+          +e("h3").step-title ШАГ 4 - Выберите тип столба
+          +e.row
+            - let i = 1;
+            each val in ["Столб 40х60х3000мм, ППК", "Столб 50х50х3000мм, ППК", "Столб 60х60х3000мм, ППК"]
+              +e.col
+                +b("label")(class="side-item" + ((i == 1) ? "_active" : "") for="pillar_type" + i)._calculator.__side-item
+                  +e.img(style="background:url(img/calculator/pillar_type/1.jpg) center no-repeat;background-size:cover")
+                    +e("a")(href="img/calculator/pillar_type/1.jpg").popup
+                  br
+                  +b.radio
+                    if i == 1
+                      +e("input")(type="radio" name="pillar_type" value=i checked id="pillar_type" + i).input
+                    else
+                      +e("input")(type="radio" name="pillar_type" value=i id="pillar_type" + i).input
+                    +e("span").label
+                      +e("span").dot
+                      +e("span").text= val
+              - i++;
+
+        +e.step
+          +e("h3").step-title ШАГ 5 - Выберите метод установки
+          +e.row
+            - let i = 1;
+            each val in ["Бутование щебнем", "Частичное бетонирование", "Полное бетонирование", "Ленточный фундамент 40х20"]
+              +e.col
+                +b("label")(class="side-item" + ((i == 1) ? "_active" : "") for="installation_method" + i)._calculator.__side-item
+                  +e.img(style="background:url(img/calculator/installation_method/" + i + ".jpg) center no-repeat;background-size:cover")
+                    +e("a")(href="img/calculator/installation_method/" + i + ".jpg").popup
+                  br
+                  +b.radio
+                    if i == 1
+                      +e("input")(type="radio" name="installation_method" value=i checked id="installation_method" + i).input
+                    else
+                      +e("input")(type="radio" name="installation_method" value=i id="installation_method" + i).input
+                    +e("span").label
+                      +e("span").dot
+                      +e("span").text= val
+              - i++;
+
+        +e.step
+          +e("h3").step-title._offset-bottom ШАГ 6 - Укажите общую длину забора с калиткой и воротами, пог. м.
+          +b("input")(type="text" name="step_6").input.__input.keypad
+
+        +e.step
+          +e("h3").step-title._offset-bottom ШАГ 7 - Укажите количество ворот
+          +b("input")(type="text" name="step_7").input.__input.keypad
+          +e("a")(href="#").skip Пропустить шаг
+
+        +e.step
+          +e("h3").step-title ШАГ 8 - Выберите ворота
+          +e.row
+            - let i = 1;
+            each val in ["Ворота распашные \"Профнастил\"", "Ворота распашные \"Профнастил в рамке\""]
+              +e.col
+                +b("label")(class="side-item" + ((i == 1) ? "_active" : "") for="goal" + i)._calculator.__side-item
+                  +e.img(style="background:url(img/calculator/goal/1.jpg) center no-repeat;background-size:cover")
+                    +e("a")(href="img/calculator/goal/1.jpg").popup
+                  br
+                  +b.radio
+                    if i == 1
+                      +e("input")(type="radio" name="goal" value=i checked id="goal" + i).input
+                    else
+                      +e("input")(type="radio" name="goal" value=i id="goal" + i).input
+                    +e("span").label
+                      +e("span").dot
+                      +e("span").text= val
+              - i++;
+
+        +e.step
+          +e("h3").step-title._offset-bottom Ширина ворот
+          +b.custom-select.__custom-select
+            +e("a")(href="javascript:void(0);").drop-button 3 м
+            +e("ul").drop-list
+              +e("li").drop-item._selected
+                +e("a")(href="width_3").drop-link 3 м
+              +e('li').drop-item
+                +e("a")(href="width_3.5").drop-link 3,5 м
+              +e('li').drop-item
+                +e("a")(href="width_4").drop-link 4 м
+              +e('li').drop-item
+                +e("a")(href="width_4.5").drop-link 4,5 м
+            +e("input")(type="hidden" name="width" value="side1").drop-hidden-input
+
+        +e.step
+          +e("h3").step-title._offset-bottom ШАГ 9 - Укажите количество калиток
+          +b("input")(type="text" name="step_9").input.__input.keypad
+
+        +e.step
+          +e("h3").step-title ШАГ 10 - Выберите калитку
+          +e.row
+            - let i = 1;
+            each val in ["Калитка \"Профнастил\", 1500х1000мм", "Калитка \"Профнастил в рамке\", 1500х1000мм"]
+              +e.col
+                +b("label")(class="side-item" + ((i == 1) ? "_active" : "") for="gate" + i)._calculator.__side-item
+                  +e.img(style="background:url(img/calculator/gate/1.jpg) center no-repeat;background-size:cover")
+                    +e("a")(href="img/calculator/gate/1.jpg").popup
+                  br
+                  +b.radio
+                    if i == 1
+                      +e("input")(type="radio" name="gate" value=i checked id="gate" + i).input
+                    else
+                      +e("input")(type="radio" name="gate" value=i id="gate" + i).input
+                    +e("span").label
+                      +e("span").dot
+                      +e("span").text= val
+              - i++;
+
+        +e.step
+          +e("h3").step-title ШАГ 11 - Выберите замок для калитки
+          +e.row
+            - let i = 1;
+            each val in ["Врезной замок Locinox (проф.40х40)"]
+              +e.col
+                +b("label")(class="side-item" + ((i == 1) ? "_active" : "") for="lock" + i)._calculator.__side-item
+                  +e.img(style="background:url(img/calculator/lock/1.jpg) center no-repeat;background-size:cover")
+                    +e("a")(href="img/calculator/lock/1.jpg").popup
+                  br
+                  +b.checkbox.__checkbox
+                    +e("input")(type="checkbox" hidden).input#lock1
+                    +e("span").custom
+                    +e("span").text= val
+              - i++;
+
+      +e.panel._sticky
+        +calculator-panel.__calculator-panel

@@ -1,0 +1,163 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/faq-block/faq-block.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.faq-block {
+  text-align: left;
+
+  &__options {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    border: 1px solid #f0f0f0;
+    border-radius: 25px;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      border: 0;
+      border-radius: 0;
+      margin: 0 -5px;
+    }
+  }
+
+  &__option {
+    flex-shrink: 1;
+    margin-left: 30px;
+    position: relative;
+    @media (max-width: 767px) {
+      flex-grow: 1;
+      margin: 0 5px 10px;
+      text-align: center;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -16px;
+      height: 18px;
+      width: 1px;
+      background-color: #cccccc;
+      transform: translateY(-50%);
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    &:nth-last-child(2) {
+      &:before {
+        display: none;
+      }
+    }
+    &:last-of-type {
+      margin-left: auto;
+      @media (max-width: 767px) {
+        margin: 0 5px;
+        width: 100%;
+      }
+      &:before {
+        display: none;
+      }
+    }
+    &_active {
+      .faq-block__btn {
+        text-decoration: underline;
+        color: #333333;
+        @media (max-width: 767px) {
+          border-color: #333333;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    font-size: 16px;
+    color: #9a9a9a;
+    padding: 12px 0;
+    position: relative;
+    transition: @transition;
+    text-decoration: none;
+    @media (max-width: 767px) {
+      display: block;
+      border: 1px solid #cccccc;
+      border-radius: 25px;
+      padding: 12px 30px;
+      text-align: center;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+    &_reset {
+      background-color: #f0f0f0;
+      padding: 12px 50px 12px 26px;
+      color: #333333;
+      @media (max-width: 767px) {
+        display: inline-block;
+        border-radius: 25px;
+        border-color: transparent;
+        padding: 12px 58px;
+        max-width: 190px;
+      }
+      &:hover {
+        background-color: @main-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__x {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 27px;
+    transform: translateY(-50%) rotate(45deg);
+    height: 1px;
+    width: 10px;
+    background-color: #6e6e6e;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: rotate(-90deg) translateX(-50%);
+      transform-origin: top left;
+      height: 1px;
+      width: 10px;
+      background-color: #6e6e6e;
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+  }
+
+  &__item {
+    margin-bottom: 25px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    font-family: @museo_cyrl700;
+    font-size: 19px;
+    line-height: 24px;
+    text-decoration: underline;
+    color: #242424;
+    margin-bottom: 7px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 21px;
+    color: #242424;
+  }
+
+}

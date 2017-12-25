@@ -1,0 +1,304 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/calculator-panel/calculator-panel.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.calculator-panel {
+  background-color: #363636;
+
+  &__side {
+
+  }
+
+  &__name {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #2d2d2d;
+    padding: 10px 25px;
+    &_edit {
+      .calculator-panel__input,
+      .calculator-panel__control-btn_save {
+        display: inline-block;
+      }
+      .calculator-panel__label,
+      .calculator-panel__control-btn_edit,
+      .calculator-panel__control-btn_delete {
+        display: none;
+      }
+    }
+  }
+
+  &__label {
+    flex-shrink: 1;
+    display: inline-block;
+    font-family: @museo_cyrl700;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: @transition;
+    &:hover {
+      color: @main-color;
+    }
+  }
+
+  &__input {
+    flex-shrink: 1;
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 25px;
+    display: none;
+    font-size: 16px;
+    color: #2a2a2a;
+    padding: 8px 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  &__controls {
+    flex-shrink: 0;
+    font-size: 0;
+    margin-left: 18px;
+  }
+
+  &__control-btn {
+    text-decoration: none;
+    height: 18px;
+    width: 18px;
+    margin-right: 12px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &_edit {
+      display: inline-block;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20height%3D%2218%22%20width%3D%2218%22%20viewBox%3D%220%200%2018%2018.000035%22%3E%3Cg%20transform%3D%22scale(.04688)%22%20fill%3D%22%23fff%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h383.947v383.947H0z%22%2F%3E%3C%2Fdefs%3E%3CclipPath%20id%3D%22b%22%3E%3Cuse%20height%3D%22100%25%22%20width%3D%22100%25%22%20xlink%3Ahref%3D%22%23a%22%20overflow%3D%22visible%22%2F%3E%3C%2FclipPath%3E%3Cpath%20clip-path%3D%22url(%23b)%22%20d%3D%22M0%20303.947v80h80l236.054-236.054-80-80zM377.707%2086.24c8.319-8.32%208.319-21.867%200-30.187L327.894%206.24c-8.321-8.32-21.868-8.32-30.187%200l-39.04%2039.04%2080%2080z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+    &_delete {
+      display: inline-block;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2218.002%22%20width%3D%2218%22%20viewBox%3D%220%200%2018%2018.001875%22%3E%3Cpath%20d%3D%22M10.592%209l7.078-7.079A1.125%201.125%200%200%200%2016.08.33L9%207.408%201.923.33A1.127%201.127%200%200%200%20.33%201.92L7.41%209%20.33%2016.079a1.127%201.127%200%200%200%201.593%201.591L9%2010.593l7.08%207.079a1.125%201.125%200%201%200%201.59-1.593zm0%200%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+    &_save {
+      display: none;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20height%3D%2213.846%22%20width%3D%2218%22%20viewBox%3D%220%200%2018%2013.846154%22%3E%3Cg%20transform%3D%22matrix(1.38462%200%200%201.38462%20.03%200)%22%20fill%3D%22%23fff%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M-.021%200h13.125v10H-.021z%22%2F%3E%3C%2Fdefs%3E%3CclipPath%20id%3D%22b%22%3E%3Cuse%20height%3D%22100%25%22%20width%3D%22100%25%22%20xlink%3Ahref%3D%22%23a%22%20overflow%3D%22visible%22%2F%3E%3C%2FclipPath%3E%3Cpath%20clip-path%3D%22url(%23b)%22%20d%3D%22M.128%205.501a.543.543%200%200%201-.149-.352c0-.1.049-.249.149-.349l.701-.701a.483.483%200%200%201%20.701%200l.049.051L4.33%207.099c.1.101.249.101.349%200L11.378.148h.051a.488.488%200%200%201%20.701%200l.699.701c.2.201.2.501%200%20.701L4.83%209.851c-.1.1-.2.149-.351.149a.452.452%200%200%201-.349-.149L.228%205.649zm0%200%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__results {
+    padding: 15px 25px;
+  }
+
+  &__item {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 13px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__result-name, &__result-price {
+    flex-shrink: 1;
+  }
+  &__result-price {
+    font-family: @museo_cyrl500;
+    margin-left: 15px;
+  }
+
+  &__result-price-i {
+    &_loading {
+      animation: rotate 1s infinite steps(8);
+      display: inline-block;
+      position: relative;
+      height: 15px;
+      width: 15px;
+      margin-right: 5px;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2216.153%22%20width%3D%2215%22%20viewBox%3D%220%200%2015%2016.153269%22%3E%3Cg%20transform%3D%22scale(.57692)%22%20fill%3D%22%23fff%22%3E%3Ccircle%20r%3D%223.5%22%20cy%3D%223.5%22%20cx%3D%2214.5%22%2F%3E%3Ccircle%20r%3D%223%22%20cy%3D%227.999%22%20cx%3D%2222%22%2F%3E%3Ccircle%20r%3D%222.5%22%20cy%3D%2216.499%22%20cx%3D%2223.5%22%2F%3E%3Ccircle%20r%3D%222%22%20cy%3D%2223.999%22%20cx%3D%2219%22%2F%3E%3Ccircle%20r%3D%222%22%20cy%3D%2225.999%22%20cx%3D%2210%22%2F%3E%3Ccircle%20r%3D%221.5%22%20cy%3D%2220.499%22%20cx%3D%222.5%22%2F%3E%3Ccircle%20r%3D%221%22%20cy%3D%2211.999%22%20cx%3D%221%22%2F%3E%3Ccircle%20r%3D%221%22%20cy%3D%224.999%22%20cx%3D%226%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__row {
+    padding: 25px 25px 40px;
+    @media (max-width: 991px) and (min-width: 768px) {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      justify-content: center;
+      background-color: #2d2d2d;
+      padding: 30px 25px;
+      text-align: center;
+    }
+  }
+
+  &__add-side-btn, &__visualizer-btn {
+    display: block;
+    border-radius: 25px;
+    font-family: @museo_cyrl500;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: @transition;
+    @media (max-width: 991px) and (min-width: 768px) {
+      width: 245px;
+    }
+    span {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: calc(~"100% + 15px");
+        transform: translateY(-50%);
+        height: 12px;
+        width: 20px;
+      }
+    }
+  }
+
+  &__add-side-btn {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    margin-bottom: 14px;
+    @media (max-width: 991px) and (min-width: 768px) {
+      margin-bottom: 0;
+      margin-right: 65px;
+    }
+    &:hover {
+      border-color: @main-color;
+    }
+    span {
+      margin-right: 15px;
+      &:before {
+        background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20height%3D%2212%22%20width%3D%2212%22%20viewBox%3D%220%200%2011.999999%2011.999999%22%3E%3Cg%20transform%3D%22scale(.0305)%22%20fill%3D%22%23fff%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h393.488v393.488H0z%22%2F%3E%3C%2Fdefs%3E%3CclipPath%20id%3D%22b%22%3E%3Cuse%20height%3D%22100%25%22%20width%3D%22100%25%22%20xlink%3Ahref%3D%22%23a%22%20overflow%3D%22visible%22%2F%3E%3C%2FclipPath%3E%3Cpath%20clip-path%3D%22url(%23b)%22%20d%3D%22M372.133%20169.289H224.196V21.351c0-6.738-9.153-21.351-27.454-21.351-18.301%200-27.453%2014.613-27.453%2021.351v147.942H21.352C14.613%20169.289%200%20178.441%200%20196.742c0%2018.301%2014.613%2027.453%2021.352%2027.453h147.941v147.937c0%206.739%209.148%2021.356%2027.449%2021.356%2018.305%200%2027.454-14.617%2027.454-21.356V224.195h147.941c6.738%200%2021.351-9.152%2021.351-27.453%200-18.301-14.617-27.453-21.355-27.453%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center left no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__visualizer-btn {
+    background-color: #e2e2e2;
+    color: #363636;
+    &:hover {
+      background-color: @main-color;
+    }
+    span {
+      margin-right: 10px;
+      &:before {
+        background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20height%3D%2210.547%22%20width%3D%2220%22%20viewBox%3D%220%200%2020%2010.546881%22%3E%3Cg%20transform%3D%22scale(.03906)%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h512v270H0z%22%2F%3E%3C%2Fdefs%3E%3CclipPath%20id%3D%22b%22%3E%3Cuse%20height%3D%22100%25%22%20width%3D%22100%25%22%20xlink%3Ahref%3D%22%23a%22%20overflow%3D%22visible%22%2F%3E%3C%2FclipPath%3E%3Cpath%20clip-path%3D%22url(%23b)%22%20d%3D%22M508.177%20124.995C503.606%20119.897%20393.681%200%20256%200%20118.319%200%208.395%20119.897%203.823%20124.995a15.002%2015.002%200%200%200%200%2020.01C8.395%20150.103%20118.319%20270%20256%20270c137.681%200%20247.606-119.897%20252.177-124.995a15.004%2015.004%200%200%200%200-20.01M361%20135c0%2057.891-47.109%20105-105%20105s-105-47.109-105-105S198.109%2030%20256%2030s105%2047.109%20105%20105%22%2F%3E%3Cpath%20clip-path%3D%22url(%23b)%22%20d%3D%22M271%20105c0-15.09%207.491-28.365%2018.887-36.53C279.661%2063.235%20268.255%2060%20256%2060c-41.353%200-75%2033.647-75%2075s33.647%2075%2075%2075c37.024%200%2067.668-27.034%2073.722-62.358C299.516%20157.367%20271%20134.522%20271%20105%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center left no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: @main-color;
+    padding: 25px;
+    text-align: center;
+    @media (max-width: 991px) and (min-width: 768px) {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__total-price {
+    display: inline-block;
+    font-family: @museo_cyrl700;
+    font-size: 30px;
+    color: #2e2e2e;
+    @media (max-width: 991px) and (min-width: 768px) {
+      margin-right: 30px;
+    }
+    span {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        right: -8px;
+        top: -7px;
+        height: 14px;
+        width: 14px;
+        background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2214%22%20width%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20data-name%3D%22Layer%201%22%3E%3Cpath%20d%3D%22M6.89%203.5a3.297%203.297%200%200%201%201.315.252%201.805%201.805%200%200%201%20.854.713%201.66%201.66%200%200%201-.295%202.125%205.138%205.138%200%200%201-.598.486c-.152.112-.302.23-.452.347a.783.783%200%200%200-.221.325l-.112.268a.512.512%200%200%201-.479.328.624.624%200%200%201-.393-.084.63.63%200%200%201-.296-.575%201.128%201.128%200%200%201%20.315-.752%205.585%205.585%200%200%201%20.737-.633%202.04%202.04%200%200%200%20.5-.522c.183-.305.125-.805-.188-1.026a.914.914%200%200%200-.38-.154%201.315%201.315%200%200%200-.625.035.85.85%200%200%200-.496.463c-.081.155-.153.316-.245.465a.61.61%200%200%201-.676.257.58.58%200%200%201-.303-.148.547.547%200%200%201-.165-.42%201.352%201.352%200%200%201%20.244-.756%202.21%202.21%200%200%201%201.061-.815%202.626%202.626%200%200%201%20.899-.179z%22%20fill%3D%22%232e2e2e%22%2F%3E%3Ccircle%20r%3D%22.757%22%20cy%3D%229.743%22%20cx%3D%226.814%22%20fill%3D%22%232e2e2e%22%2F%3E%3Cpath%20d%3D%22M7%201.4A5.6%205.6%200%201%201%201.4%207%205.6%205.6%200%200%201%207%201.4M7%200a7%207%200%201%200%207%207%207%207%200%200%200-7-7z%22%20fill%3D%22%232e2e2e%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__button {
+    margin: 15px 0 20px;
+  }
+
+  &__second-btn {
+    display: inline-block;
+    font-family: @museo_cyrl500;
+    font-size: 16px;
+    color: #363636;
+    text-decoration: underline;
+    position: relative;
+    padding-left: 30px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 20px;
+      width: 20px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &_reset {
+      &:before {
+        top: 43%;
+        background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20height%3D%2222.756%22%20width%3D%2220%22%20viewBox%3D%220%200%2019.999998%2022.755554%22%3E%3Cg%20transform%3D%22scale(.04444)%22%20fill%3D%22%23363636%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h450v512H0z%22%2F%3E%3C%2Fdefs%3E%3CclipPath%20id%3D%22b%22%3E%3Cuse%20height%3D%22100%25%22%20width%3D%22100%25%22%20xlink%3Ahref%3D%22%23a%22%20overflow%3D%22visible%22%2F%3E%3C%2FclipPath%3E%3Cpath%20clip-path%3D%22url(%23b)%22%20d%3D%22M31.29%20180l26.27%20291.07C59.7%20494.41%2078.95%20512%20102.39%20512h245.209c23.441%200%2042.691-17.59%2044.83-40.93L418.7%20180zm116.66%20271.99c-.24.01-.47.01-.68.01-7.971%200-14.621-6.27-14.971-14.31l-9.549-212c-.38-8.28%206.009-15.291%2014.299-15.67%209.37-.27%2015.29%206.049%2015.641%2014.29l9.55%20211.999c.38%208.28-6%2015.301-14.29%2015.681M240%20437c0%208.29-6.71%2015-15%2015s-15-6.71-15-15V225c0-8.29%206.71-15%2015-15s15%206.71%2015%2015zm77.69.69c-.351%208.04-7%2014.31-14.971%2014.31-.2%200-.439%200-.67-.01-8.29-.38-14.679-7.401-14.299-15.681l9.549-211.999c.38-8.241%206.33-14.44%2015.651-14.29%208.29.379%2014.67%207.39%2014.29%2015.67zM375%2060h-45V45c0-24.81-20.19-45-45-45H165c-24.82%200-45%2020.19-45%2045v15H75C33.63%2060%200%2093.65%200%20135v15h450v-15c0-41.35-33.64-75-75-75m-75%200H150V45c0-8.28%206.73-15%2015-15h120c8.26%200%2015%206.72%2015%2015z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center no-repeat;
+        background-size: contain;
+      }
+    }
+    &_print {
+      margin-left: 35px;
+      @media (max-width: 991px) and (min-width: 768px) {
+        margin-left: 0;
+      }
+      &:before {
+        background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20height%3D%2220.001%22%20width%3D%2220%22%20viewBox%3D%220%200%2019.999998%2020.000731%22%3E%3Cpath%20fill%3D%22%23363636%22%20d%3D%22M6.25%2015h6.25v1.25H6.25z%22%2F%3E%3Cg%20transform%3D%22scale(.04883)%22%20fill%3D%22%23363636%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h409.586v409.602H0z%22%2F%3E%3C%2Fdefs%3E%3CclipPath%20id%3D%22b%22%3E%3Cuse%20height%3D%22100%25%22%20width%3D%22100%25%22%20xlink%3Ahref%3D%22%23a%22%20overflow%3D%22visible%22%2F%3E%3C%2FclipPath%3E%3Cpath%20clip-path%3D%22url(%23b)%22%20d%3D%22M102.398%2025.602h204.79v51.199h25.601V25.602C332.789%2011.477%20321.336%200%20307.188%200h-204.79C88.262%200%2076.801%2011.477%2076.801%2025.602v51.199h25.597zM128%20256h153.586v25.602H128z%22%2F%3E%3Cpath%20clip-path%3D%22url(%23b)%22%20d%3D%22M383.989%20102.398H25.602C11.461%20102.398%200%20113.875%200%20128v153.601c0%2014.149%2011.461%2025.598%2025.602%2025.598h51.199V384c0%2014.152%2011.461%2025.601%2025.597%2025.601h204.79c14.148%200%2025.601-11.453%2025.601-25.601v-76.801h51.2c14.148%200%2025.597-11.449%2025.597-25.598V128c0-14.125-11.449-25.602-25.597-25.602M307.188%20384h-204.79V230.398h204.79zm51.199-204.801c-14.148%200-25.598-11.449-25.598-25.597%200-14.125%2011.45-25.602%2025.598-25.602s25.602%2011.477%2025.602%2025.602c0%2014.148-11.45%2025.597-25.602%2025.597%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
