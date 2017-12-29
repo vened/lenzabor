@@ -1,0 +1,145 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/section-fence/section-fence.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.section-fence {
+  background-color: #ffffff;
+  color: #242424;
+  padding: 25px 0 50px;
+  @media (max-width: 767px) {
+    padding: 25px 0 35px;
+  }
+
+  &__subheading {
+    font-size: 16px;
+    line-height: 27px;
+    margin: 15px 0 0 25px;
+  }
+
+  &__container {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 991px) {
+      display: block;
+    }
+  }
+
+  &__item {
+    flex-shrink: 1;
+    padding-top: 60px;
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    @media (max-width: 991px) {
+      padding-top: 35px;
+      width: 100%;
+    }
+    @media (max-width: 479px) {
+      padding-top: 25px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 82px;
+      height: 10px;
+      width: 25px;
+      background-color: #f1f1f1;
+      @media (max-width: 991px) {
+        top: 57px;
+      }
+      @media (max-width: 479px) {
+        display: none;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      height: 5000px;
+      width: 10px;
+      background-color: #f1f1f1;
+      @media (max-width: 479px) {
+        display: none;
+      }
+    }
+    &:nth-of-type(even) {
+      padding-right: 25px;
+      padding-left: 10px;
+      @media (max-width: 991px) {
+        padding-right: 0;
+        padding-left: 25px;
+      }
+      @media (max-width: 479px) {
+        padding-left: 0;
+      }
+      &:before, &:after {
+        right: 0;
+        @media (max-width: 991px) {
+          right: auto;
+          left: 0;
+        }
+      }
+    }
+    &:nth-of-type(3),
+    &:nth-of-type(4),
+    &:nth-of-type(7),
+    &:nth-of-type(8),
+    &:nth-of-type(11),
+    &:nth-of-type(12) {
+      &:after {
+        bottom: calc(~"100% - 82px");
+        @media (max-width: 991px) {
+          bottom: auto;
+          top: 0;
+        }
+      }
+    }
+    &:nth-of-type(odd) {
+      padding-left: 25px;
+      padding-right: 10px;
+      @media (max-width: 991px) {
+        padding-right: 0;
+      }
+      @media (max-width: 479px) {
+        padding-left: 0;
+      }
+      &:before, &:after {
+        left: 0;
+      }
+    }
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(5),
+    &:nth-of-type(6),
+    &:nth-of-type(9),
+    &:nth-of-type(10) {
+      &:after {
+        top: 82px;
+        @media (max-width: 991px) {
+          top: 0;
+        }
+      }
+    }
+    &:first-of-type {
+      @media (max-width: 991px) {
+        &:after {
+          top: 57px;
+        }
+      }
+    }
+    &:last-of-type {
+      @media (max-width: 991px) {
+        &:after {
+          top: auto;
+          bottom: calc(~"100% - 57px");
+        }
+      }
+    }
+  }
+
+}

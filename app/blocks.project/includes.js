@@ -16,3 +16,6 @@
 //= include custom-select/custom-select.js
 //= include side-item/side-item.js
 //= include keypad/keypad.js
+//= include link-scroll/link-scroll.js
+//= include visualizer/visualizer.js
+//= include section-gallery/section-gallery.js

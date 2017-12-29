@@ -2,7 +2,7 @@
 
 $(function() {
 
-  $(".side-item__popup").magnificPopup({
+  $(".side-item__popup_magnific").magnificPopup({
     type: "image",
     closeOnContentClick: true,
     mainClass: "mfp-with-zoom"
@@ -17,7 +17,7 @@ $(function() {
     $(this).addClass("side-item_active");
   });
 
-  $(".side-item__popup").click(function(event) {
+  $(".side-item__popup_magnific").click(function(event) {
     event.stopPropagation();
   });
 

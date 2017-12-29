@@ -1,0 +1,93 @@
+{
+  "colorsLeft" : {
+    "item1" : {
+      "title" : "Полимерное покрытие",
+      "list" : [
+        "Высокий показатель жесткости и механической прочности",
+        "Устойчивость к воздействию масел, щелочей, растворителей, бензина."
+      ]
+    },
+    "item2" : {
+      "title" : "Декорирование",
+      "list" : [
+        "Для декоративного и защитного покрытия стали можно использовать полимер любого",
+        "Декорировать планки под натуральный камень или дерево разных пород."
+      ]
+    }
+  },
+
+  "colors" : {
+    "color1" : {
+      "hex" : "#ffffff",
+      "ral" : "RAL 9010"
+    },
+    "color2" : {
+      "hex" : "#f9fce7",
+      "ral" : "RAL 9002"
+    },
+    "color3" : {
+      "hex" : "#ab0101",
+      "ral" : "RAL 3011"
+    },
+    "color4" : {
+      "hex" : "#aa9e9e",
+      "ral" : "RAL 9006"
+    },
+    "color5" : {
+      "hex" : "#76766c",
+      "ral" : "RAL 9007"
+    },
+    "color6" : {
+      "hex" : "#592b1b",
+      "ral" : "RAL 8017"
+    },
+    "color7" : {
+      "hex" : "#943a17",
+      "ral" : "RAL 8004"
+    },
+    "color8" : {
+      "hex" : "#010101",
+      "ral" : "RAL 9005"
+    },
+    "color9" : {
+      "hex" : "#011456",
+      "ral" : "RAL 5010"
+    },
+    "color10" : {
+      "hex" : "#3562b7",
+      "ral" : "RAL 5012"
+    },
+    "color11" : {
+      "hex" : "#fffec8",
+      "ral" : "RAL 1015"
+    },
+    "color12" : {
+      "hex" : "#fdc220",
+      "ral" : "RAL 1003"
+    },
+    "color13" : {
+      "hex" : "#d5dbd1",
+      "ral" : "RAL 7035"
+    },
+    "color14" : {
+      "hex" : "#08240b",
+      "ral" : "RAL 7024"
+    },
+    "color15" : {
+      "hex" : "#014b28",
+      "ral" : "RAL 6020"
+    },
+    "color16" : {
+      "hex" : "#222127",
+      "ral" : "RAL 6005"
+    },
+    "color17" : {
+      "hex" : "url(img/colors/1.jpg) center no-repeat;background-size:cover",
+      "ral" : "9010"
+    },
+    "color18" : {
+      "hex" : "url(img/colors/2.jpg) center no-repeat;background-size:cover",
+      "ral" : "9002"
+    }
+  }
+}

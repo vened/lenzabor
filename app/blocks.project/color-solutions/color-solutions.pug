@@ -1,0 +1,17 @@
+mixin color-solutions()
+  +b.color-solutions&attributes(attributes)
+    +e.container.clearfix
+      +e.left
+        each item in colorsLeft
+          +e("h4").left-title !{item.title}
+          +e("ul").list
+            each val in item.list
+              +e("li").item !{val}
+      +e.right
+        +e("h4").title Примеры самых распространенных цветовых решений по табл.
+        +e("ul").colors
+          each color in colors
+            +e("li").color-item
+              +e("span")(style="background:" + color.hex).color
+              br
+              +e("span").ral !{color.ral}

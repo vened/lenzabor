@@ -1,0 +1,14 @@
+mixin section-fence()
+  +b("section").section-fence&attributes(attributes)
+    .grid
+      +b("h2").heading._line !{sectionFence.heading}
+      +e("p").subheading !{sectionFence.subheading}
+      +e.container
+        each item in sectionFence.list
+          +e.item
+            +b.fence-advantage
+              +e.top
+                +e.circle
+                  +iconsvg("" + item.icon)(width=item.iconWidth height=item.iconHeight)
+                +e("h4").title !{item.title}
+              +e("p").text !{item.text}

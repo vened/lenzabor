@@ -1,0 +1,168 @@
+{
+  "galleryNav" : [
+    "Фото заборов из дерева",
+    "Фото заборов из металлического штакетника",
+    "Фото заборов из профнастила",
+    "Фото заборов из сетки гиттер",
+    "Фото ворот и калиток",
+    "Каркасы, нестандартные решения, прочее"
+  ],
+
+  "galleryFilters" : {
+    "filter1" : {
+      "label" : "Тип штакетника:",
+      "dropButton" : "Показать все",
+      "name" : "fence_type",
+      "value" : "all",
+      "items" : {
+        "item1" : {
+          "name" : "Показать все",
+          "href" : "all"
+        },
+        "item2" : {
+          "name" : "120 мм.",
+          "href" : "120"
+        },
+        "item3" : {
+          "name" : "136 мм.",
+          "href" : "136"
+        }
+      }
+    },
+    "filter2" : {
+      "label" : "Обрезка торца:",
+      "dropButton" : "Показать все",
+      "name" : "trim_cutting",
+      "value" : "all",
+      "items" : {
+        "item1" : {
+          "name" : "Показать все",
+          "href" : "all"
+        },
+        "item2" : {
+          "name" : "Дуга",
+          "href" : "arc"
+        },
+        "item3" : {
+          "name" : "Прямой",
+          "href" : "straight"
+        },
+        "item4" : {
+          "name" : "Трапеция",
+          "href" : "trapeze"
+        }
+      }
+    },
+    "filter3" : {
+      "label" : "Расположение:",
+      "dropButton" : "Показать все",
+      "name" : "location",
+      "value" : "all",
+      "items" : {
+        "item1" : {
+          "name" : "Показать все",
+          "href" : "all"
+        },
+        "item2" : {
+          "name" : "Вертикально \"шахматка\"",
+          "href" : "vartical_chess"
+        },
+        "item3" : {
+          "name" : "Вертикально в ряд",
+          "href" : "vartical_row"
+        },
+        "item4" : {
+          "name" : "Горизонтально \"шахматка\"",
+          "href" : "horizontal_chess"
+        }
+      }
+    },
+    "filter4" : {
+      "label" : "Цвет забора:",
+      "dropButton" : "Показать все",
+      "name" : "color",
+      "value" : "all",
+      "items" : {
+        "item1" : {
+          "name" : "Показать все",
+          "href" : "all"
+        },
+        "item2" : {
+          "name" : "RAL 3005",
+          "href" : "ral_3005"
+        },
+        "item3" : {
+          "name" : "RAL 6005",
+          "href" : "ral_6005"
+        },
+        "item4" : {
+          "name" : "RAL 8017",
+          "href" : "ral_8017"
+        }
+      }
+    }
+  },
+
+  "gallery" : {
+    "item1" : {
+      "preview" : "img/gallery/tree/1_min.jpg",
+      "img" : "img/gallery/tree/1.jpg",
+      "text" : "Плетенка Орех, доска 150x20, Кукузи"
+    },
+    "item2" : {
+      "preview" : "img/gallery/tree/2_min.jpg",
+      "img" : "img/gallery/tree/2.jpg",
+      "text" : "Плетенка Орех, доска 150x20, Кукузи"
+    },
+    "item3" : {
+      "preview" : "img/gallery/tree/3_min.jpg",
+      "img" : "img/gallery/tree/3.jpg",
+      "text" : "Плетенка Орех, доска 150x20, Кукузи"
+    },
+    "item4" : {
+      "preview" : "img/gallery/tree/4_min.jpg",
+      "img" : "img/gallery/tree/4.jpg",
+      "text" : "Плетенка Орех, доска 150x20, Кукузи"
+    },
+    "item5" : {
+      "preview" : "img/gallery/tree/5_min.jpg",
+      "img" : "img/gallery/tree/5.jpg",
+      "text" : "Плетенка Орех, доска 150x20, Кукузи"
+    },
+    "item6" : {
+      "preview" : "img/gallery/tree/6_min.jpg",
+      "img" : "img/gallery/tree/6.jpg",
+      "text" : "Плетенка Орех, доска 150x20, Кукузи"
+    },
+    "item7" : {
+      "preview" : "img/gallery/tree/7_min.jpg",
+      "img" : "img/gallery/tree/7.jpg",
+      "text" : "Плетенка Орех, доска 150x20, Кукузи"
+    },
+    "item8" : {
+      "preview" : "img/gallery/tree/8_min.jpg",
+      "img" : "img/gallery/tree/8.jpg",
+      "text" : "Плетенка Орех, доска 150x20, Кукузи"
+    },
+    "item9" : {
+      "preview" : "img/gallery/tree/9_min.jpg",
+      "img" : "img/gallery/tree/9.jpg",
+      "text" : "Дер. штакетник, шахматка, прамой, лента, кирпичные столбы, светлый"
+    },
+    "item10" : {
+      "preview" : "img/gallery/tree/10_min.jpg",
+      "img" : "img/gallery/tree/10.jpg",
+      "text" : "Дер. штакетник, шахматка, прамой, лента, кирпичные столбы, светлый"
+    },
+    "item11" : {
+      "preview" : "img/gallery/tree/11_min.jpg",
+      "img" : "img/gallery/tree/11.jpg",
+      "text" : "Дер. штакетник, шахматка, прамой, лента, кирпичные столбы, светлый"
+    },
+    "item12" : {
+      "preview" : "img/gallery/tree/12_min.jpg",
+      "img" : "img/gallery/tree/12.jpg",
+      "text" : "Дер. штакетник, шахматка, прамой, лента, кирпичные столбы, светлый"
+    }
+  }
+}

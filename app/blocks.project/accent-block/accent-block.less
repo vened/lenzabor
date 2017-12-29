@@ -1,0 +1,47 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/accent-block/accent-block.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.accent-block {
+  background-color: @main-color;
+  font-size: 16px;
+  color: #242424;
+  padding: 40px 60px;
+  @media (max-width: 991px) {
+    padding: 40px 25px;
+  }
+  @media (max-width: 767px) {
+    padding: 40px 15px;
+  }
+
+  &__top {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    flex-shrink: 0;
+    width: 24px;
+  }
+
+  &__title {
+    flex-shrink: 1;
+    font-family: @pt_serifbold;
+    font-size: 21px;
+    font-weight: normal;
+    padding-left: 15px;
+  }
+
+  &__text {
+    font-family: @museo_cyrl500;
+    line-height: 27px;
+    margin-top: 10px;
+  }
+
+}

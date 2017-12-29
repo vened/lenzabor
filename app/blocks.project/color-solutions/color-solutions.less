@@ -1,0 +1,163 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/color-solutions/color-solutions.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.color-solutions {
+  background-color: #ffffff;
+  border: 10px solid #f6f6f6;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: 767px) {
+    border: 0;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: @main-color;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: -103px;
+    left: calc(~"50% - 78px");
+    background-color: #ffffff;
+    border-radius: 100%;
+    height: 824px;
+    width: 265px;
+    transform: rotate(7deg);
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &__container {
+    padding: 30px 45px;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 991px) {
+      padding: 0;
+    }
+  }
+
+  &__left, &__right {
+    float: left;
+    width: 50%;
+    @media (max-width: 991px) {
+      float: none;
+      padding: 35px;
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      padding: 30px 15px;
+    }
+  }
+  &__left {
+    @media (max-width: 991px) {
+      background-color: @main-color;
+    }
+  }
+  &__right {
+    padding-left: 15px;
+  }
+
+  &__left-title {
+    font-family: @pt_serifbold;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 24px;
+    color: #242424;
+    margin-top: 35px;
+    @media (max-width: 991px) {
+      margin-top: 15px;
+    }
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &__list {
+    list-style-type: decimal;
+  }
+
+  &__item {
+    font-family: @museo_cyrl500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2a2a2a;
+    margin: 15px 0 0 18px;
+    padding-right: 100px;
+    @media (max-width: 991px) {
+      padding-right: 0;
+    }
+  }
+
+  &__title {
+    font-family: @pt_serifbold;
+    font-size: 21px;
+    font-weight: normal;
+    color: #242424;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
+
+  &__colors {
+    font-size: 0;
+    margin: 0 -15px;
+  }
+
+  &__color-item {
+    display: inline-block;
+    padding: 20px 15px 0;
+    text-align: center;
+    vertical-align: top;
+    width: 16.6666666%;
+    @media (max-width: 1199px) {
+      width: 20%;
+    }
+    @media (max-width: 991px) {
+      width: 16.6666666%;
+    }
+    @media (max-width: 600px) {
+      width: 20%;
+    }
+    @media (max-width: 479px) {
+      width: 25%;
+    }
+    @media (max-width: 400px) {
+      width: 33.3333333%;
+    }
+  }
+
+  &__color {
+    display: inline-block;
+    border: 6px solid #e2e2e2;
+    border-radius: 50%;
+    transition: @transition;
+    height: 47px;
+    width: 47px;
+    overflow: hidden;
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  &__ral {
+    display: inline-block;
+    font-family: @museo_cyrl500;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 10px;
+    color: #2a2a2a;
+  }
+
+}

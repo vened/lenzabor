@@ -1,0 +1,14 @@
+mixin info-block(arr)
+  each item in arr
+    +b.info-block&attributes(attributes)
+      +e("h3").title !{item.title}
+      if item.description
+        +e("p").description !{item.description}
+      +e.box
+        if item.secondTitle
+          +e("h4").second-title !{item.secondTitle}
+        +e("ul").list
+          each val in item.list
+            +e("li").item !{val}
+      if item.more
+        +e.more !{item.more}

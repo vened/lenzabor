@@ -1,0 +1,40 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/section-features/section-features.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.section-features {
+  color: #242424;
+
+  &_inner {
+    background-color: #ffffff;
+    padding-top: 75px;
+    @media (max-width: 991px) {
+      padding-top: 50px;
+    }
+  }
+
+  &__subheading {
+    font-family: @pt_serifbold;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 30px 0 0 25px;
+    @media (max-width: 767px) {
+      font-size: 21px;
+      line-height: 26px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 27px;
+    margin: 15px 0 0 25px;
+  }
+
+  &__offer-list {
+    margin-top: 25px;
+  }
+
+}

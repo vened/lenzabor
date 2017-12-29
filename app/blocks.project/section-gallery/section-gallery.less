@@ -1,0 +1,177 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/section-gallery/section-gallery.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.section-gallery {
+  background-color: #ffffff;
+  padding-bottom: 70px;
+  @media (max-width: 991px) {
+    padding-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    padding-bottom: 30px;
+  }
+
+  &__left, &__right {
+    float: left;
+  }
+  &__left {
+    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.2);
+    width: 360px;
+    @media (max-width: 1199px) {
+      width: 272px;
+    }
+    @media (max-width: 767px) {
+      box-shadow: none;
+      width: 100%;
+    }
+  }
+  &__right {
+    width: calc(~"100% - 360px");
+    padding-left: 100px;
+    @media (max-width: 1199px) {
+      width: calc(~"100% - 272px");
+      padding-left: 30px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 20px;
+    }
+  }
+
+  &__nav-item {
+    @media (max-width: 767px) {
+      border-bottom: 1px solid #f0f0f0;
+    }
+    &_active {
+      .section-gallery__nav-link {
+        background-color: @main-color;
+      }
+    }
+  }
+
+  &__nav-link {
+    display: block;
+    font-size: 16px;
+    color: #2a2a2a;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: @transition;
+    @media (max-width: 1199px) {
+      padding: 10px 20px;
+    }
+    @media (max-width: 767px) {
+      padding: 10px 15px;
+    }
+    &:hover {
+      background-color: @main-color;
+    }
+  }
+
+  &__heading {
+    @media (max-width: 767px) {
+      margin: 0 15px;
+    }
+  }
+
+  &__filters {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+    @media (max-width: 767px) {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  &__filter {
+    flex-shrink: 1;
+    padding: 20px 10px 0;
+    width: 25%;
+    @media (max-width: 1199px) {
+      width: 50%;
+    }
+    @media (max-width: 479px) {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    font-size: 0;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+    @media (max-width: 991px) {
+      padding-top: 10px;
+    }
+    @media (max-width: 767px) {
+      padding-top: 20px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 30px 15px 0;
+    width: 25%;
+    @media (max-width: 1199px) {
+      width: 33.3333333%;
+    }
+    @media (max-width: 991px) {
+      width: 50%;
+    }
+    @media (max-width: 767px) {
+      padding: 20px 15px 0;
+      width: 33.3333333%;
+    }
+    @media (max-width: 560px) {
+      width: 50%;
+    }
+    @media (max-width: 370px) {
+      width: 100%;
+    }
+  }
+
+  &__side-item {
+    display: inline-block;
+    cursor: default;
+  }
+
+  &__button {
+    margin-top: 50px;
+    @media (max-width: 479px) {
+      margin-top: 30px;
+    }
+  }
+
+  &__mfp {
+    .mfp-figure {
+
+    }
+    .mfp-img {
+      padding: 40px 0 48px;
+    }
+    .mfp-bottom-bar {
+      margin-top: -48px;
+      background-color: #ffffff;
+      padding: 15px 0;
+    }
+    .mfp-title {
+      font-size: 16px;
+      color: #2a2a2a;
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+
+}

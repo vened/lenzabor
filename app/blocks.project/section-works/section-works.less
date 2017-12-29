@@ -6,15 +6,31 @@
 
 .section-works {
 
-  &_index {
+  &_index, &_inner {
     background-color: #ffffff;
     padding-bottom: 70px;
     text-align: center;
+  }
+
+  &_index {
     .section-works__heading {
       margin-bottom: 45px;
       @media (max-width: 991px) {
         margin-bottom: 35px;
       }
+    }
+  }
+
+  &_inner {
+    .section-works__heading {
+      text-align: left;
+    }
+    .section-works__subheading {
+      font-size: 16px;
+      line-height: 22px;
+      color: #242424;
+      padding: 15px 0 25px 25px;
+      text-align: left;
     }
   }
 

@@ -1,0 +1,8 @@
+mixin scroll-menu()
+  +b("nav").scroll-menu&attributes(attributes)
+    - let i = 1;
+    each item in scrollMenu
+      +e("a")(class="item" class=((i == 5) ? "popup-with-zoom-anim" : "link-scroll") href="#" + item.link)
+        +iconsvg("" + item.icon)(width=item.iconWidth height=item.iconHeight).__icon
+        +e.text !{item.text}
+      - i++;

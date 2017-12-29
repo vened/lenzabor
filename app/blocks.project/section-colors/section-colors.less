@@ -1,0 +1,24 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/section-colors/section-colors.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.section-colors {
+  background-color: #ffffff;
+  padding: 30px 0 90px;
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
+
+  &__content {
+    margin-top: 40px;
+    @media (max-width: 991px) {
+      margin-top: 35px;
+    }
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
+  }
+
+}

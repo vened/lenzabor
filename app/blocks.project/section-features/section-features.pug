@@ -1,0 +1,18 @@
+mixin section-features()
+  +b("section").section-features&attributes(attributes)
+    .grid
+      +b("h2").heading._line.__heading !{sectionFeatures.header}
+      +e("h4").subheading !{sectionFeatures.subheading}
+      +e("p").description !{sectionFeatures.description}
+    .grid.grid_no-sm-padding
+      +b.offer-list.__offer-list
+        +e("h3").title !{sectionFeatures.offerTitle}
+        +e("ul").list
+          each item in sectionFeatures.list
+            +e("li").item !{item}
+      +b.accent-block
+        +e.top
+          +e.img
+            +iconsvg("medal")(width="24" height="32")
+          +e("h3").title !{sectionFeatures.accentTitle}
+        +e("p").text !{sectionFeatures.accentText}

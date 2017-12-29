@@ -8,11 +8,21 @@
   background-color: #ffffff;
   overflow: hidden;
 
-  &_index {
+  &_index, &_inner {
     text-align: center;
     padding: 65px 0 55px;
     @media (max-width: 991px) {
       padding: 45px 0;
+    }
+  }
+
+  &_inner {
+    .section-prices__heading {
+      text-align: left;
+    }
+    .section-prices__subheading {
+      text-align: left;
+      padding: 15px 0 25px 25px;
     }
   }
 

@@ -1,0 +1,90 @@
+mixin calculation-form()
+  +b.calculation-form&attributes(attributes)
+    +e("h3").title Расчитать стоимость забора
+    +e("form")(action="#" method="post" enctype="multipart/form-data" autocomplete="off").form
+      +e.col._4
+        +label("name", "Имя")._required-red
+        +b("input")(type="text" name="name" required).input._name#name
+      +e.col._4
+        +label("email", "Email")._required-red
+        +b("input")(type="email" name="email" required).input._email#email
+      +e.col._4
+        +label("phone", "Телефон")
+        +b("input")(type="text" name="phone" required).input._phone.mask._phone#phone
+      +e.col._4._push
+        +label("width", "Метраж")
+        +b("input")(type="text" name="width" required).input._ruler#width
+      +e.col._45._pull
+        +b.label Тип ограждения:
+        +b.custom-select
+          +e("a")(href="javascript:void(0);").drop-button Рабица - забивной способ
+          +e("ul").drop-list
+            +e("li").drop-item._selected
+              +e("a")(href="1").drop-link Рабица - забивной способ
+            +e('li').drop-item
+              +e("a")(href="2").drop-link Рабица - частичное бетонирование
+            +e('li').drop-item
+              +e("a")(href="3").drop-link Рабица - бутование щебнем
+            +e('li').drop-item
+              +e("a")(href="4").drop-link Рабица - полное бетонирование
+            +e('li').drop-item
+              +e("a")(href="5").drop-link Гиттер - частичное бетонирование
+            +e('li').drop-item
+              +e("a")(href="6").drop-link Гиттер - полное бетонирование
+            +e('li').drop-item
+              +e("a")(href="7").drop-link Профнастил - частичное бетонирование
+            +e('li').drop-item
+              +e("a")(href="8").drop-link Профнастил - бутование щебнем
+            +e('li').drop-item
+              +e("a")(href="9").drop-link Профнастил - полное бетонирование
+          +e("input")(type="hidden" name="type_fence" value="1").drop-hidden-input
+      +e.col._4._radio
+        +b.label._no-left-offset Высота:
+        +b.radio.__radio
+          +e("input")(type="radio" name="height" value="1.5" checked).input#height_1
+          +e("label")(for="height_1").label
+            +e("span").dot
+            +e("span").text 1,5 м
+        +b.radio.__radio
+          +e("input")(type="radio" name="height" value="2").input#height_2
+          +e("label")(for="height_2").label
+            +e("span").dot
+            +e("span").text 2 м
+      +e.col._4._radio
+        +b.label._no-left-offset Установка воротной группы:
+        +b.radio.__radio
+          +e("input")(type="radio" name="gate_group" value="yes" checked).input#gate_group_1
+          +e("label")(for="gate_group_1").label
+            +e("span").dot
+            +e("span").text Да
+        +b.radio.__radio
+          +e("input")(type="radio" name="gate_group" value="no").input#gate_group_2
+          +e("label")(for="gate_group_2").label
+            +e("span").dot
+            +e("span").text Нет
+      +e.col._4._radio
+        +b.label._no-left-offset Установка калитки:
+        +b.radio.__radio
+          +e("input")(type="radio" name="wicket" value="yes" checked).input#wicket_1
+          +e("label")(for="wicket_1").label
+            +e("span").dot
+            +e("span").text Да
+        +b.radio.__radio
+          +e("input")(type="radio" name="wicket" value="no").input#wicket_2
+          +e("label")(for="wicket_2").label
+            +e("span").dot
+            +e("span").text Нет
+      +e.col
+        +label("text", "Дополнительные сведения")
+        +b("textarea")(name="text" required).input._textarea#text
+      +e.col
+        +label("file", "Прикрепите фото участка и (или) техническое задание")
+        +b.input-file
+          +e("input")(type="file" name="file" multiple required).input#file
+          +e("label")(for="file").label
+            +e("span").field
+            +e.button Обзор
+      +e.col
+        +checkbox("Я согласен на <a href=\"#\">обработку персональных данных</a>")
+      +e.col._center
+        +b("input")(type="submit" value="Отправить").button._yellow

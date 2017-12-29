@@ -1,0 +1,180 @@
+include ../blocks.project/includes
+
+doctype html
+html(lang="ru")
+  include templates/head/head
+    block head
+      - var pageTitle = "Забор из металлического штакетника";
+
+  +page
+
+    +header(false).__header
+
+
+    +b.content.__content
+
+      .grid.grid_no-sm-padding
+        +scroll-menu
+
+      +section-fence
+
+
+      +b("section").section-visualizer#visualizer
+        .grid
+          +b("h2").heading._line Визуализатор забора из металлического штакетника
+          +e("p").subheading Мы создали специальный инструмент для визуального просмотра, который поможет вам подобрать удачную конфигурацию вашего будущего ограждения: типоразмер планок, расстояние между ними, цвет и др.
+        .grid.grid_no-sm-padding
+          //- ВИЗУАЛИЗАТОР --- START
+          +b.visualizer
+            +e.hidden
+              +e("img")(src="img/visualizer/back.jpg")
+              +e("img")(src="img/visualizer/1/r1v2t1s2o1colha.png")
+              +e("img")(src="img/visualizer/1/r1v2t1s2o1coreh.png")
+              +e("img")(src="img/visualizer/1/r1v2t1s4o1colha.png")
+              +e("img")(src="img/visualizer/1/r1v2t1s4o1coreh.png")
+              +e("img")(src="img/visualizer/1/r2v2t1s2o1colha.png")
+              +e("img")(src="img/visualizer/1/r2v2t1s2o1coreh.png")
+              +e("img")(src="img/visualizer/1/r2v2t1s4o1colha.png")
+              +e("img")(src="img/visualizer/1/r2v2t1s4o1coreh.png")
+
+            +e.controls(data-folder="1")
+              +e.control-item
+                +b.label Ракурс:
+                +b.visualizer-control
+                  +e("a")(href="r1").drop-button Вид снаружи
+                  +e("ul").drop-list
+                    +e("li").drop-item._selected
+                      +e("a")(href="r1").drop-link Вид снаружи
+                    +e('li').drop-item
+                      +e("a")(href="r2").drop-link Вид изнутри
+              +e.control-item
+                +b.label Вид штакетника:
+                +b.visualizer-control
+                  +e("a")(href="v2t1").drop-button Доска 120*10 мм
+                  +e("ul").drop-list
+                    +e("li").drop-item._selected
+                      +e("a")(href="v2t1").drop-link Доска 120*10 мм
+              +e.control-item
+                +b.label Варианты установки:
+                +b.visualizer-control
+                  +e("a")(href="s2").drop-button Верт. в шахм. порядке
+                  +e("ul").drop-list
+                    +e("li").drop-item._selected
+                      +e("a")(href="s2").drop-link Верт. в шахм. порядке
+                    +e('li').drop-item
+                      +e("a")(href="s4").drop-link Плетенка
+              +e.control-item
+                +b.label Вид обрезки:
+                +b.visualizer-control
+                  +e("a")(href="o1").drop-button Прямая
+                  +e("ul").drop-list
+                    +e("li").drop-item._selected
+                      +e("a")(href="o1").drop-link Прямая
+              //-+e.control-item._hidden
+                +b.label Цвет:
+                +b.visualizer-control._colors
+                  +e("a")(href="colha").drop-button Ольха
+                  +e("ul").drop-list
+                    +e("li").drop-item._selected
+                      +e("a")(href="colha").drop-link Ольха
+                    +e("li").drop-item
+                      +e("a")(href="coreh").drop-link Орех
+
+            +e.box._front._s2
+              +e.fence
+              +e.ios-switch-container
+                +b("label").ios-switch.__ios-switch
+                  +e("input")(type="checkbox" checked).input
+                  span
+                +e.ios-switch-text Интерактивный режим
+                +e.ios-switch-ischecked Включен
+              +e.circle._1f._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/ushi.png)").circle-img
+                  +e("p").circle-text Проушины под навесной замок
+              +e.circle._2fb._2fb1._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/ruchka.jpg)").circle-img
+                  +e("p").circle-text Замок типа «цербер», ручка «гриб», проушины под навесной замок
+              +e.circle._2fb._2fb2._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/zamok_w.jpg)").circle-img
+                  +e("p").circle-text Замок с ручкой «locinox» или аналог
+              +e.circle._3fb._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/stolb.png)").circle-img
+                  +e("p").circle-text Столб опорный для ворот 80*80 мм. Сталь 3 мм ППК
+              +e.circle._4fb._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/samorez_w.jpg)").circle-img
+                  +e("p").circle-text Крепление на оконный саморез с буром
+              +e.circle._plet-calitka._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/k_ramka.jpg)").circle-img
+                  +e("p").circle-text Калитка в рамке стального профиля 60*60 мм. Сталь 3мм ППК
+              +e.circle._5fb._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/laga.png)").circle-img
+                  +e("p").circle-text Лага поперечная 40*20 мм. Сталь 1.5 мм ППК
+              +e.circle._6fb._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/stolb.png)").circle-img
+                  +e("p").circle-text Столб опорный 60*40 мм или 60*60 мм. Сталь 2 мм ППК
+              +e.circle._7fb._7fb1._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/topv2t1s2colha.png)").circle-img
+                  +e("p").circle-text Доска хвойная сухая строганная 25*120-150 мм. Антисептическое покрытие в 2 слоя
+              +e.circle._7fb._7fb2._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/topv2t1s4colha.png)").circle-img
+                  +e("p").circle-text Доска хвойная сухая строганная 25*120-150 мм. Антисептическое покрытие в 2 слоя
+              +e.circle._plet-stolb._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/stolb_w.jpg)").circle-img
+                  +e("p").circle-text Столб перегибной 60*60 мм. Деревянный с двойной пропиткой антисептиком
+              +e.circle._8b._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/shekolda.png)").circle-img
+                  +e("p").circle-text Щеколда с проушинами. Может быть дополнена замком типа «цербер».
+              +e.circle._9b._tooltip
+                +e.circle-content
+                  +e("span")(style="background:url(img/visualizer/1/accessories/upor.png)").circle-img
+                  +e("p").circle-text Упоры для фиксации распашных ворот
+
+            +e.buttons
+              +e("a")(href="colha" style="background:#A06F40 url(img/visualizer/1/colors/colha.jpg);color:#A06F40").color._active
+                +e("span").splash._first
+                  +iconsvg("splash_1")(width="20" height="37.690").splash-img
+                +e("span").splash._second
+                  +iconsvg("splash_2")(width="30" height="63.11").splash-img
+              +e("a")(href="coreh" style="background:#4E301A url(img/visualizer/1/colors/coreh.jpg);color:#4E301A").color
+                +e("span").splash._first
+                  +iconsvg("splash_1")(width="20" height="37.690").splash-img
+                +e("span").splash._second
+                  +iconsvg("splash_2")(width="30" height="63.11").splash-img
+          //- ВИЗУАЛИЗАТОР --- END
+
+
+      +section-colors
+
+      +calculation-form
+
+      +section-features._inner#section-features
+
+      .grid#gateway
+        +info-block(infoBlocks)._inner
+
+      +section-prices._inner#section-prices
+        .grid
+          +b("h2").heading._line.__heading Стоимость установки
+          +e("p").subheading Цена монтажа зависит от материала полотна, каркаса и опорных столбов, метода установки. Предлагаем типовые базовые варианты (в качестве примера):
+
+      +section-works(sliderWorks)._inner
+        .grid
+          +b("h2").heading._line.__heading Примеры ограждений из металлоштакетника
+          +e("p").subheading Несколько примеров работ, выполненных нашей компанией:
+
+
+    +footer(false).__footer
+
+    +popup-callback

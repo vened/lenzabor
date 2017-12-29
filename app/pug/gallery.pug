@@ -1,0 +1,23 @@
+include ../blocks.project/includes
+
+doctype html
+html(lang="ru")
+  include templates/head/head
+    block head
+      - var pageTitle = "Фото работ";
+
+  +page
+
+    +header(false).__header
+
+
+    +b.content.__content
+
+      .grid
+        +breadcrumbs(["Лензабор", "Фотогалерея"])._top
+
+      .grid.grid_no-sm-padding
+        +section-gallery
+
+
+    +footer(false).__footer

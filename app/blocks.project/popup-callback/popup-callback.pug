@@ -1,0 +1,13 @@
+mixin popup-callback()
+  +b.popup-callback.zoom-anim-dialog.mfp-hide#popup-callback&attributes(attributes)
+    +e("form")(action="#" method="post" autocomplete="off").form
+      +label("popup-name", "Имя")._required-red
+      +b("input")(type="text" name="name" required).input._name#popup-name.__label
+      +label("popup-email", "Email")._required-red
+      +b("input")(type="email" name="email" required).input._email#popup-email.__label
+      +label("popup-phone", "Телефон")
+      +b("input")(type="text" name="phone" required).input._phone.mask._phone#popup-phone.__label
+      +label("popup-text", "Ваше сообщение")._required-red
+      +b("textarea")(name="text" required).input._textarea#popup-text
+      +e.button-container
+        +b("input")(type="submit" value="Отправить").button._yellow

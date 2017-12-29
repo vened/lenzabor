@@ -1,0 +1,59 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/offer-list/offer-list.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.offer-list {
+  background-color: #f6f6f6;
+  padding: 45px 60px;
+  color: #242424;
+  @media (max-width: 991px) {
+    padding: 45px 40px;
+  }
+  @media (max-width: 767px) {
+    padding: 45px 15px;
+  }
+
+  &__title {
+    font-family: @pt_serifbold;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 26px;
+    margin-bottom: 25px;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    counter-reset: item;
+  }
+
+  &__item {
+    font-size: 16px;
+    line-height: 27px;
+    padding: 0 0 20px 55px;
+    position: relative;
+    &:before {
+      counter-increment: item;
+      content: counter(item);
+      background-color: @main-color;
+      border-radius: 50%;
+      font-family: @museo_cyrl700;
+      font-size: 14px;
+      line-height: 33px;
+      text-align: center;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 33px;
+      width: 33px;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+
+}

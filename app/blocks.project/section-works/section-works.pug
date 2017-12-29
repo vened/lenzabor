@@ -1,16 +1,16 @@
-mixin section-works()
+mixin section-works(objWorks)
   +b("section").section-works&attributes(attributes)
     block
     .grid
       +e.container.clearfix
         +e.slider-container
           +e.slider
-            each item in sliderWorks
+            each item in objWorks
               +e("a")(href="#").item
                 +e("img")(src="" + item.img alt="" + item.alt width="640" height="360").img
         +e.previews-container
           +e.slider-previews
-            each item in sliderWorks
+            each item in objWorks
               +e.item-previews
                 +e("img")(src="" + item.preview alt="" + item.alt width="272" height="153").img-previews
                 +e("span").relation

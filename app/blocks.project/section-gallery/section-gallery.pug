@@ -1,0 +1,30 @@
+mixin section-gallery()
+  +b("section").section-gallery.clearfix&attributes(attributes)
+    +e("ul").left
+      - let i = 1;
+      each item in galleryNav
+        +e("li")(class="nav-item" + ((i == 1) ? "_active" : ""))
+          +e("a")(href="#").nav-link !{item}
+        - i++;
+    +e.right
+      +b("h2").heading._line.__heading Фото заборов из дерева
+      +e.filters
+        each filter in galleryFilters
+          +e.filter
+            +b.label !{filter.label}
+            +b.custom-select
+              +e("a")(href="javascript:void(0);").drop-button !{filter.dropButton}
+              +e("ul").drop-list
+                - let i = 1;
+                each item in filter.items
+                  +e("li")(class="drop-item" + ((i == 1) ? "_selected" : ""))
+                    +e("a")(href=item.href).drop-link !{item.name}
+                  - i++;
+              +e("input")(type="hidden" name=filter.name value=filter.value).drop-hidden-input
+      +e.list
+        each item in gallery
+          +e.item
+            +b.side-item.__side-item
+              +e.img(style="background:url(" +  item.preview + ") center no-repeat;background-size:cover")
+                +e("a")(href=item.img title=item.text).popup
+        +b("a")(href="#").button._yellow.__button Показать еще

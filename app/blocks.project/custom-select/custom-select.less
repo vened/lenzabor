@@ -4,7 +4,7 @@
 @import "../../less/_png-sprite";    // файл с png-спрайтами
 
 
-.custom-select {
+.custom-select, .visualizer-control {
   position: relative;
 
   &__drop-button {
@@ -44,7 +44,7 @@
     }
   }
 
-  &__drop-list{
+  &__drop-list {
     background-color: #ffffff;
     border-radius: 0 0 25px 25px;
     box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.2);
@@ -61,7 +61,7 @@
     display: block;
     overflow: hidden;
     &_selected {
-      .custom-select__drop-link {
+      .custom-select__drop-link, .visualizer-control__drop-link {
         background-color: @main-color;
         &:before {
           background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%225.703%22%20viewBox%3D%220%200%205.7030619%209.9999429%22%3E%3Cpath%20d%3D%22M5.496%205.494l-4.3%204.3a.7.7%200%200%201-.991-.99L4.01%205%20.206%201.195a.7.7%200%200%201%20.99-.99l4.3%204.3a.696.696%200%200%201%200%20.99zm0%200%22%20fill%3D%22%23313131%22%2F%3E%3C%2Fsvg%3E") center no-repeat;

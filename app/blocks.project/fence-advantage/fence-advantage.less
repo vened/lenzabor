@@ -1,0 +1,49 @@
+// Для импорта в файл подключения: @import "./app/blocks.project/fence-advantage/fence-advantage.less";
+
+@import "../../less/_vars";     // файл с переменными
+@import "../../less/_png-sprite";    // файл с png-спрайтами
+
+
+.fence-advantage {
+
+  &__top {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+  }
+
+  &__circle {
+    flex-shrink: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: @main-color;
+    border-radius: 50%;
+    font-size: 0;
+    color: #000000;
+    height: 53px;
+    width: 53px;
+  }
+
+  &__title {
+    flex-shrink: 1;
+    font-family: @pt_serifbold;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 26px;
+    padding: 14px 0 0 25px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 27px;
+    padding: 10px 0 0 78px;
+  }
+
+}
